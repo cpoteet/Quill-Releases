@@ -148,3 +148,20 @@ a {
   color: var(--color-ink-60);
   letter-spacing: 0.02em;
 }
+
+/* ── Hero Screenshot ── */
+.hero-screenshot {
+  padding: 0 40px 80px;
+  background: var(--color-surface);
+}
+
+.hero-screenshot__inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.hero-screenshot__img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-level3);
+}
