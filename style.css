@@ -655,15 +655,15 @@ a {
 }
 
 .license-section__body a {
-  color: var(--color-accent);
+  color: inherit;
   text-decoration: underline;
-  text-decoration-color: rgba(235, 142, 23, 0.4);
+  text-decoration-color: rgba(91, 99, 112, 0.4);
   text-underline-offset: 2px;
   transition: text-decoration-color var(--transition);
 }
 
 .license-section__body a:hover {
-  text-decoration-color: var(--color-accent);
+  text-decoration-color: var(--color-ink-60);
 }
 
 .license-list {
