@@ -360,3 +360,63 @@ a {
   color: var(--color-ink);
   font-weight: 600;
 }
+
+/* ── Closing CTA ── */
+.closing-cta {
+  padding: 80px 40px;
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-hairline);
+  text-align: center;
+}
+
+.closing-cta__headline {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+  margin-bottom: 28px;
+}
+
+.closing-cta__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ── Footer ── */
+.footer {
+  padding: 32px 40px;
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-hairline);
+}
+
+.footer__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.footer__logo {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-ink-60);
+}
+
+.footer__tagline {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-ink-60);
+  letter-spacing: 0.02em;
+}
+
+.footer__disclaimer {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-ink-60);
+  max-width: 560px;
+  line-height: 1.6;
+  margin-top: 6px;
+}
