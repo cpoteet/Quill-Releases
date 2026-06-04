@@ -420,3 +420,70 @@ a {
   line-height: 1.6;
   margin-top: 6px;
 }
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  /* Nav */
+  .nav {
+    padding: 0 20px;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 48px 20px 40px;
+  }
+
+  .hero__headline {
+    font-size: 2rem;
+  }
+
+  /* Hero screenshot */
+  .hero-screenshot {
+    padding: 0 20px 48px;
+  }
+
+  /* Feature rows — stack vertically, image always below text */
+  .feature-row,
+  .feature-row--reverse {
+    flex-direction: column !important;
+    padding: 48px 20px;
+    gap: 28px;
+  }
+
+  .feature-row__image {
+    order: 2;
+  }
+
+  .feature-row__text {
+    order: 1;
+  }
+
+  /* Requirements — single column */
+  .requirements {
+    padding: 48px 20px;
+  }
+
+  .requirements__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Getting Started */
+  .getting-started {
+    padding: 48px 20px;
+  }
+
+  /* Closing CTA */
+  .closing-cta {
+    padding: 60px 20px;
+  }
+
+  .closing-cta__headline {
+    font-size: 1.5rem;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 28px 20px;
+  }
+}
