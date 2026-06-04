@@ -240,3 +240,42 @@ a {
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-level3);
 }
+
+/* ── Requirements ── */
+.requirements {
+  background: var(--color-bone);
+  padding: 64px 40px;
+  border-top: 1px solid var(--color-hairline);
+}
+
+.requirements__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.requirements__heading {
+  font-size: 1.375rem;
+  font-weight: 600;
+  letter-spacing: -0.012em;
+  color: var(--color-ink);
+  margin-bottom: 32px;
+}
+
+.requirements__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px 48px;
+}
+
+.requirement-item__title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-ink);
+  margin-bottom: 3px;
+}
+
+.requirement-item__note {
+  font-size: 13px;
+  color: var(--color-ink-60);
+  line-height: 1.5;
+}
