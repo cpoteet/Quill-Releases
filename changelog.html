@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Changelog — Quill</title>
+  <meta name="description" content="Release history for Quill, a native macOS app for WordPress.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="/" class="nav__logo">Quill</a>
+    <div class="nav__links">
+      <a href="https://www.paypal.com/donate?hosted_button_id=25BUE2BS854YN" class="nav__link" target="_blank" rel="noopener">Donate</a>
+      <a href="changelog.html" class="nav__link nav__link--active">Changelog</a>
+      <a href="index.html#download" class="btn-primary">Download</a>
+    </div>
+  </nav>
+
+  <section class="changelog-header">
+    <div class="changelog-header__inner">
+      <p class="eyebrow">Release History</p>
+      <h1 class="changelog-header__title">Changelog</h1>
+      <p class="changelog-header__sub">New releases are distributed as ZIP downloads on this page.</p>
+    </div>
+  </section>
+
+  <div class="releases">
+
+    <article class="release">
+      <div class="release__inner">
+        <div class="release__header">
+          <span class="release__version">v1.3.0</span>
+          <span class="release__date">June 2, 2026</span>
+        </div>
+
+        <div class="release__section">
+          <h2 class="release__section-title">What's New</h2>
+
+          <div class="release__feature">
+            <h3 class="release__feature-title">Blockquote Citations</h3>
+            <p class="release__body">Blockquotes now include an optional citation line. Toggling a blockquote auto-inserts a <code>&lt;cite&gt;</code> node; Enter/Backspace handle it gracefully. The cite element is omitted from saved HTML when empty, producing clean Gutenberg output.</p>
+          </div>
+
+          <div class="release__feature">
+            <h3 class="release__feature-title">AI Context Menu</h3>
+            <p class="release__body">AI writing operations (Make Longer, Make Shorter, To Table, To List) moved from a floating pill to the right-click context menu, appearing only when text is selected and an API key is configured.</p>
+          </div>
+        </div>
+
+        <div class="release__section">
+          <h2 class="release__section-title">Fixes</h2>
+          <ul class="release__list">
+            <li><strong>Excerpt field</strong> — Post excerpts now load correctly from remote posts and display in the settings panel with consistent styling.</li>
+            <li><strong>Taxonomy fetching</strong> — Categories and tags are now fetched with pagination support, so sites with large taxonomies load completely.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="release__inner">
+        <div class="release__header">
+          <span class="release__version">v1.2.0</span>
+          <span class="release__date">May 29, 2026</span>
+        </div>
+
+        <div class="release__section">
+          <h2 class="release__section-title">What's New</h2>
+
+          <div class="release__feature">
+            <h3 class="release__feature-title">Extended Heading Levels</h3>
+            <p class="release__body">H4, H5, and H6 now appear in the heading dropdown alongside H1–H3, giving you the full HTML heading range without leaving the editor.</p>
+          </div>
+
+          <div class="release__feature">
+            <h3 class="release__feature-title">File Menu Commands</h3>
+            <p class="release__body"><strong>File → New Post</strong> and <strong>File → New Page</strong> create a local draft and open it immediately — no need to navigate the sidebar first. <strong>File → New Media…</strong> switches to the Media tab and opens the upload panel in one step.</p>
+          </div>
+
+          <div class="release__feature">
+            <h3 class="release__feature-title">Editor &amp; Interface Polish</h3>
+            <p class="release__body">The writing canvas is now white, giving the editor a cleaner, more focused feel. Settings panel rows are roomier, the sidebar tab selection and new-item button are more visually distinct, and the media detail view has been redesigned with a two-column layout.</p>
+          </div>
+        </div>
+
+        <div class="release__section">
+          <h2 class="release__section-title">Fixes</h2>
+          <ul class="release__list">
+            <li><strong>AI result acceptance</strong> — Gutenberg HTML transformation is now correctly applied when accepting an AI rewrite, matching the output of a manual save.</li>
+            <li><strong>AI selection pill</strong> — the ✦ pill now anchors below the selected text rather than floating above the bounding box.</li>
+            <li><strong>Unsaved changes toast</strong> — the "Unsaved changes restored" notice no longer appears incorrectly when opening a server post with no pending local edits.</li>
+            <li><strong>Media grid hit-testing</strong> — thumbnail clicks in the media browser now register at the correct position after scrolling.</li>
+            <li><strong>Gutenberg HTML fidelity</strong> — <code>toWordPressHTML</code> output more closely matches what the WordPress block editor produces, reducing round-trip diffs.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="release__inner">
+        <div class="release__header">
+          <span class="release__version">v1.1.0</span>
+          <span class="release__date">May 26, 2026</span>
+        </div>
+
+        <div class="release__section">
+          <h2 class="release__section-title">What's New</h2>
+
+          <div class="release__feature">
+            <h3 class="release__feature-title">Spell Checking</h3>
+            <p class="release__body">On-demand spell check via the <strong>ABC</strong> toolbar button. Misspelled words are underlined in red; right-clicking a highlighted word shows system correction suggestions. Squiggles clear as you edit.</p>
+          </div>
+
+          <div class="release__feature">
+            <h3 class="release__feature-title">Offline Editor Loading</h3>
+            <p class="release__body">Tiptap is now bundled locally rather than fetched from a CDN at launch. The editor loads instantly from disk with no network dependency.</p>
+          </div>
+
+          <div class="release__feature">
+            <h3 class="release__feature-title">Loading States</h3>
+            <p class="release__body">A spinner now appears while the post list is loading from WordPress and while the editor is initializing — replacing a blank white panel.</p>
+          </div>
+        </div>
+
+        <div class="release__section">
+          <h2 class="release__section-title">Fixes</h2>
+          <ul class="release__list">
+            <li><strong>Save Draft</strong> for local drafts now writes only to SQLite and never touches the WordPress API. Previously it would attempt a WordPress save and fail for unpublished local items.</li>
+            <li><strong>⌘S</strong> on remote posts now correctly triggers Update rather than showing the Save Draft button.</li>
+            <li>Conflict-detection baseline is now refreshed from the server each time a post is opened, preventing false "edited elsewhere" warnings on re-open.</li>
+            <li>Spell-check squiggles now clear only the word being edited rather than wiping all highlights on the first keystroke.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="release__inner">
+        <div class="release__header">
+          <span class="release__version">v1.0.0</span>
+          <span class="release__date">May 24, 2026</span>
+        </div>
+
+        <div class="release__section">
+          <h2 class="release__section-title">Initial Release</h2>
+          <ul class="release__list">
+            <li><strong>Post &amp; page editor</strong> — Full rich text editing with Tiptap, producing clean Gutenberg-compatible HTML. Headings, lists, blockquotes, code blocks, tables, bold, italic, inline code, and links.</li>
+            <li><strong>WordPress sync</strong> — Create, edit, publish, schedule, and trash posts and pages via the WordPress REST API. No plugin required — uses Application Passwords.</li>
+            <li><strong>Local drafts</strong> — Write offline and publish when ready. Drafts are stored in SQLite.</li>
+            <li><strong>Media library</strong> — Browse your WordPress media library, insert images into posts, and resize or align them inline.</li>
+            <li><strong>Image tools</strong> — Drag images from Finder directly into the editor. Resize with drag handles. Align left, center, or right with Gutenberg-compatible output.</li>
+            <li><strong>Link picker</strong> — Insert and edit links with a popover search across your existing posts and pages.</li>
+            <li><strong>Post settings</strong> — Manage categories, tags, slug, excerpt, scheduling, and discussion settings.</li>
+            <li><strong>AI writing assistant</strong> — Generate posts or rewrite selections using Claude, tuned to your writing style.</li>
+            <li><strong>Dark mode</strong> — Full light and dark mode support throughout.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__col">
+        <p class="footer__logo">Quill — A native macOS app for WordPress</p>
+        <p class="footer__disclaimer">Quill is provided as-is. No support is offered — feedback and bug reports are welcome but responses and fixes are not guaranteed. Use at your own risk.</p>
+      </div>
+      <div class="footer__col">
+        <p class="footer__disclaimer">© 2026 <a href="https://www.siolon.com" target="_blank" rel="noopener">Chris Poteet</a> · <a href="license.html">End User Licensing Agreement (EULA)</a></p>
+        <p class="footer__disclaimer">Uses <a href="https://tiptap.dev" target="_blank" rel="noopener">Tiptap</a> (© Tiptap GmbH), <a href="https://prosemirror.net" target="_blank" rel="noopener">ProseMirror</a> (© Marijn Haverbeke et al.), and <a href="https://github.com/stephencelis/SQLite.swift" target="_blank" rel="noopener">SQLite.swift</a> (© Stephen Celis) under the MIT License.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

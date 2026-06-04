@@ -1,0 +1,8 @@
+# Planning & internal files — not for publication
+DESIGN.md
+CLAUDE.md
+docs/
+.superpowers/
+.claude/
+.DS_Store
+images/.DS_Store
