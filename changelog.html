@@ -34,6 +34,44 @@
     <article class="release">
       <div class="release__inner">
         <div class="release__header">
+          <span class="release__version">v1.4.0</span>
+          <span class="release__date">June 6, 2026</span>
+        </div>
+
+        <div class="release__section">
+          <h2 class="release__section-title">What's New</h2>
+
+          <div class="release__feature">
+            <h3 class="release__feature-title">About Window</h3>
+            <p class="release__body">Quill now has an About window (Quill → About Quill) showing the version, copyright, and third-party notices for Tiptap, ProseMirror, and SQLite.swift.</p>
+          </div>
+
+          <div class="release__feature">
+            <h3 class="release__feature-title">Code View</h3>
+            <p class="release__body">A new <code>&lt;/&gt;</code> button at the far right of the editor toolbar switches between the visual Tiptap editor and a raw HTML textarea. The HTML is pretty-printed on entry and parsed back into Tiptap when you return to visual mode — useful for inspecting or hand-editing Gutenberg block markup.</p>
+          </div>
+
+          <div class="release__feature">
+            <h3 class="release__feature-title">Keyboard Shortcuts</h3>
+            <p class="release__body">Three new File menu shortcuts: <strong>⌘N</strong> New Post, <strong>⌘⇧N</strong> New Page, and <strong>⌘⌥N</strong> New Media.</p>
+          </div>
+        </div>
+
+        <div class="release__section">
+          <h2 class="release__section-title">Fixes</h2>
+          <ul class="release__list">
+            <li><strong>Link attributes</strong> — Links no longer add <code>target="_blank"</code> or <code>rel="noopener noreferrer nofollow"</code> to every anchor, keeping saved HTML clean.</li>
+            <li><strong>AI generate prompt</strong> — The prompt textarea is now locked while Claude is generating, preventing accidental edits mid-generation.</li>
+            <li><strong>Code view save</strong> — Exiting code view now correctly fires <code>contentChanged</code> so edits made in raw HTML are saved rather than silently dropped.</li>
+            <li><strong>Code view scroll</strong> — Code view opens scrolled to the top instead of the bottom.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="release__inner">
+        <div class="release__header">
           <span class="release__version">v1.3.0</span>
           <span class="release__date">June 2, 2026</span>
         </div>
