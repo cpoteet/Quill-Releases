@@ -34,6 +34,50 @@
     <article class="release">
       <div class="release__inner">
         <div class="release__header">
+          <span class="release__version">v1.5.0</span>
+          <span class="release__date">June 7, 2026</span>
+        </div>
+
+        <div class="release__section">
+          <h2 class="release__section-title">What's New</h2>
+
+          <div class="release__feature">
+            <h3 class="release__feature-title">Image Captions</h3>
+            <p class="release__body">Images now support inline captions. Click an image to select it, then type below it to add a caption — saved as a Gutenberg <code>&lt;figcaption&gt;</code> block.</p>
+          </div>
+
+          <div class="release__feature">
+            <h3 class="release__feature-title">Alt Text</h3>
+            <p class="release__body">Images now carry alt text end-to-end: pre-populated from the WordPress media library when inserting, editable in the Media detail panel, and written to the <code>&lt;img alt="..."&gt;</code> attribute on save.</p>
+          </div>
+
+          <div class="release__feature">
+            <h3 class="release__feature-title">Class &amp; Attribute Preservation</h3>
+            <p class="release__body">Custom HTML classes and attributes (e.g. hand-edited in code view) are now preserved when Tiptap round-trips the document through its schema.</p>
+          </div>
+
+          <div class="release__feature">
+            <h3 class="release__feature-title">Interface Adjustments</h3>
+            <p class="release__body">The editor toolbar has been restyled with SVG icons and a heading-level dropdown replacing the separate H1–H6 buttons, with tooltips added to every control. The Media sidebar toolbar buttons now match the style of the Posts and Pages sidebars. The editor also updates its color scheme immediately when the system appearance changes while the app is open.</p>
+          </div>
+        </div>
+
+        <div class="release__section">
+          <h2 class="release__section-title">Fixes</h2>
+          <ul class="release__list">
+            <li><strong>Spelling suggestions</strong> — Right-clicking a red-underlined word now shows up to 8 suggestions at the top of the context menu.</li>
+            <li><strong>Media tab reload</strong> — The Media tab always reloads when switched to, fixing a bug where a partial cache prevented new uploads from appearing.</li>
+            <li><strong>Image Reset button</strong> — Reset now correctly restores the full-resolution image source and original dimensions, not just clears inline size constraints.</li>
+            <li><strong>Resize handles</strong> — Resize handles are now positioned relative to the image frame only, so they no longer misalign when a caption is present.</li>
+            <li><strong>Context menu leaks</strong> — macOS AutoFill and Services items no longer leak into the editor or title field right-click menus.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="release__inner">
+        <div class="release__header">
           <span class="release__version">v1.4.0</span>
           <span class="release__date">June 6, 2026</span>
         </div>
