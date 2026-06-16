@@ -35,6 +35,47 @@
     <article class="release">
       <div class="release__inner">
         <div class="release__header">
+          <span class="release__version">v1.7.0</span>
+          <span class="release__date">June 16, 2026</span>
+        </div>
+
+        <div class="release__section">
+          <h2 class="release__section-title">What's New</h2>
+
+          <div class="release__feature">
+            <h3 class="release__feature-title">Sidebar Toggle</h3>
+            <p class="release__body">A new button in the editor toolbar lets you hide and show the left sidebar panel, giving you a distraction-free full-width writing view.</p>
+          </div>
+
+          <div class="release__feature">
+            <h3 class="release__feature-title">WordPress Block Comments in Code View</h3>
+            <p class="release__body">The HTML code view now preserves WordPress block comments (e.g. <code>&lt;!-- wp:paragraph --&gt;</code>) when you open it, so you see the same raw markup WordPress stores — not just the stripped inner HTML. Edits made in code view are synced back immediately, so <strong>⌘S</strong> saves without requiring you to exit code view first.</p>
+          </div>
+
+          <div class="release__feature">
+            <h3 class="release__feature-title">Improved Non-Image Media Panel</h3>
+            <p class="release__body">The media detail panel for audio, video, and document files now shows richer metadata and displays the file extension (e.g. <code>MP4</code>, <code>PDF</code>) in the Type field instead of a MIME type string.</p>
+          </div>
+
+          <div class="release__feature">
+            <h3 class="release__feature-title">Quill Help</h3>
+            <p class="release__body">The <strong>Help → Quill Help</strong> menu item now opens the online documentation at <a href="https://cpoteet.github.io/Quill-Releases/docs.html" class="content-link" target="_blank" rel="noopener">cpoteet.github.io/Quill-Releases/docs.html</a>.</p>
+          </div>
+        </div>
+
+        <div class="release__section">
+          <h2 class="release__section-title">Fixes</h2>
+          <ul class="release__list">
+            <li><strong>Code view no-op exit</strong> — exiting code view without making any edits no longer calls <code>setContent</code>, which previously caused compounding whitespace and wiped Tiptap's visual state unnecessarily.</li>
+            <li><strong>Page status in sidebar</strong> — pages now show their status dot (Draft, Published, etc.) in the sidebar row, consistent with posts.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="release__inner">
+        <div class="release__header">
           <span class="release__version">v1.6.0</span>
           <span class="release__date">June 12, 2026</span>
         </div>
