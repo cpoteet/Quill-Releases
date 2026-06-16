@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Guide — Quill</title>
+  <meta name="description" content="A reference manual for Quill, the native macOS WordPress editor.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="/Quill-Releases/" class="nav__logo">Quill</a>
+    <div class="nav__links">
+      <a href="https://www.paypal.com/donate?hosted_button_id=25BUE2BS854YN" class="nav__link" target="_blank" rel="noopener">Donate</a>
+      <a href="docs.html" class="nav__link nav__link--active">Docs</a>
+      <a href="changelog.html" class="nav__link">Changelog</a>
+      <a href="https://cpoteet.github.io/Quill-Releases/Quill.zip" class="btn-primary">Download</a>
+    </div>
+  </nav>
+
+  <section class="changelog-header">
+    <div class="changelog-header__inner">
+      <p class="eyebrow">Reference</p>
+      <h1 class="changelog-header__title">User Guide</h1>
+      <p class="changelog-header__sub">A reference manual for Quill, the native macOS WordPress editor.</p>
+    </div>
+  </section>
+
+  <div class="docs-layout">
+
+    <aside class="docs-toc">
+      <p class="docs-toc__heading">Contents</p>
+      <ul class="docs-toc__list">
+        <li><a href="#introduction" class="docs-toc__link">Introduction</a></li>
+        <li><a href="#requirements--installation" class="docs-toc__link">Requirements &amp; Installation</a></li>
+        <li><a href="#connecting-to-wordpress" class="docs-toc__link">Connecting to WordPress</a></li>
+        <li><a href="#the-interface" class="docs-toc__link">The Interface</a></li>
+        <li><a href="#writing--editing" class="docs-toc__link">Writing &amp; Editing</a></li>
+        <li><a href="#content-elements" class="docs-toc__link">Content Elements</a></li>
+        <li><a href="#post--page-settings" class="docs-toc__link">Post &amp; Page Settings</a></li>
+        <li><a href="#media-library" class="docs-toc__link">Media Library</a></li>
+        <li><a href="#ai-writing-features" class="docs-toc__link">AI Writing Features</a></li>
+        <li><a href="#keyboard-reference" class="docs-toc__link">Keyboard Reference</a></li>
+        <li><a href="#limitations--compatibility" class="docs-toc__link">Limitations &amp; Compatibility</a></li>
+      </ul>
+    </aside>
+
+    <main class="docs-content">
+
+      <section class="docs-section" id="introduction">
+        <h2 class="docs-h2">Introduction</h2>
+        <p class="docs-body">Quill is a native macOS application for writing and publishing content on self-hosted WordPress sites. It replaces the browser-based Gutenberg editor with a focused, distraction-free writing environment built for the Mac, with full support for posts, pages, media, taxonomies, scheduling, and AI-assisted writing.</p>
+        <p class="docs-body">Quill is built around a simple premise: the act of writing deserves a dedicated tool. Rather than competing with WordPress's block editor for layout and site-building tasks, Quill concentrates on what most WordPress authors actually spend their time doing: drafting, editing, and publishing content. The result is an interface that stays out of your way and lets you focus on the work.</p>
+        <h3 class="docs-h3">What Quill does</h3>
+        <ul class="docs-list">
+          <li>Create, edit, publish, and schedule posts and pages</li>
+          <li>Manage media uploads and insert images into content</li>
+          <li>Organize content with categories, tags, slugs, and excerpts</li>
+          <li>Write with a rich text editor that produces clean Gutenberg-compatible HTML</li>
+          <li>Optionally generate and refine content using the Anthropic Claude API</li>
+        </ul>
+        <h3 class="docs-h3">What Quill is not</h3>
+        <ul class="docs-list">
+          <li>A WordPress.com client — Quill requires a self-hosted WordPress installation</li>
+          <li>A full site builder or theme editor</li>
+          <li>A replacement for the WordPress admin dashboard</li>
+        </ul>
+        <p class="docs-body">Quill is free.</p>
+      </section>
+
+      <section class="docs-section" id="requirements--installation">
+        <h2 class="docs-h2">Requirements &amp; Installation</h2>
+        <h3 class="docs-h3">Requirements</h3>
+        <ul class="docs-list">
+          <li><strong>macOS:</strong> macOS 26 (Tahoe) or later. Earlier versions may work but are not officially supported.</li>
+          <li><strong>WordPress:</strong> A self-hosted WordPress site running WordPress 7.0 or later. Your site must be accessible over HTTPS.</li>
+          <li><strong>WordPress.com:</strong> Not supported. Quill connects only to self-hosted WordPress installations.</li>
+        </ul>
+        <h3 class="docs-h3">Downloading Quill</h3>
+        <p class="docs-body">Quill is available for free at <a href="https://cpoteet.github.io/Quill-Releases/" class="content-link" target="_blank" rel="noopener">cpoteet.github.io/Quill-Releases</a>. Download the latest release, unzip the file, and drag <strong>Quill.app</strong> into your <code>/Applications</code> folder.</p>
+        <h3 class="docs-h3">First Launch: macOS Security</h3>
+        <p class="docs-body">Quill is not notarized by Apple, so macOS will block it from opening the first time. This is expected. To allow it:</p>
+        <ol class="docs-ol">
+          <li>Attempt to open Quill. macOS will display a message saying the app cannot be opened.</li>
+          <li>Open <strong>System Settings</strong> and navigate to <strong>Privacy &amp; Security</strong>.</li>
+          <li>Scroll down to the Security section. You will see a message that Quill was blocked.</li>
+          <li>Click <strong>Open Anyway</strong>.</li>
+          <li>A confirmation dialog will appear. Click <strong>Open</strong>.</li>
+        </ol>
+        <p class="docs-body">Quill will open normally from this point forward. This prompt only appears once per installation.</p>
+      </section>
+
+      <section class="docs-section" id="connecting-to-wordpress">
+        <h2 class="docs-h2">Connecting to WordPress</h2>
+        <p class="docs-body">Quill connects to your WordPress site using an <strong>Application Password</strong>, a credential type built into WordPress that grants API access without exposing your main account password. You will need three pieces of information: your site URL, your WordPress username, and an Application Password you generate in the WordPress admin.</p>
+        <h3 class="docs-h3">Step 1: Generate an Application Password in WordPress</h3>
+        <ol class="docs-ol">
+          <li>Log into your WordPress admin dashboard.</li>
+          <li>In the left sidebar, navigate to <strong>Users → Profile</strong>.</li>
+          <li>Scroll down to the <strong>Application Passwords</strong> section.</li>
+          <li>In the <strong>New Application Password Name</strong> field, enter a name such as "Quill".</li>
+          <li>Click <strong>Add New Application Password</strong>.</li>
+          <li>WordPress will display the generated password. <strong>Copy it now.</strong> It will not be shown again.</li>
+        </ol>
+        <div class="docs-note">Application Passwords require WordPress 7.0 or later, and your site must use HTTPS.</div>
+        <h3 class="docs-h3">Step 2: Enter Your Credentials in Quill</h3>
+        <ol class="docs-ol">
+          <li>Open Quill's settings via the <strong>Quill</strong> menu → <strong>Settings</strong>, or press <strong>⌘,</strong>.</li>
+          <li>In the <strong>WordPress Credentials</strong> section, fill in:
+            <ul class="docs-list docs-list--nested">
+              <li><strong>Site URL:</strong> Your site's full URL, including <code>https://</code> (for example, <code>https://yoursite.com</code>). Trailing slashes are handled automatically.</li>
+              <li><strong>Username:</strong> Your WordPress username.</li>
+              <li><strong>Application Password:</strong> The password you copied from step 1.</li>
+            </ul>
+          </li>
+          <li>Click <strong>Save</strong>.</li>
+        </ol>
+        <p class="docs-body">Quill will store your credentials locally and connect to your site. Once saved, your posts and pages will begin loading in the sidebar.</p>
+      </section>
+
+      <section class="docs-section" id="the-interface">
+        <h2 class="docs-h2">The Interface</h2>
+        <p class="docs-body">Quill's window is divided into three panels: the <strong>Sidebar</strong> on the left, the <strong>Editor</strong> in the center, and the <strong>Settings Panel</strong> on the right. The sidebar and settings panel can each be shown or hidden independently.</p>
+        <h3 class="docs-h3">The Sidebar</h3>
+        <p class="docs-body">The sidebar organizes your content into four sections, selectable via tabs at the top:</p>
+        <ul class="docs-list">
+          <li><strong>Posts</strong> — Lists all posts on your site, most recently published first. A search field lets you filter by title.</li>
+          <li><strong>Pages</strong> — Lists all pages on your site, most recently published first, with the same search capability.</li>
+          <li><strong>Drafts</strong> — Lists local drafts saved only on your Mac, not yet published or synced to WordPress.</li>
+          <li><strong>Media</strong> — Displays your site's media library as a thumbnail grid for browsing and uploading files.</li>
+        </ul>
+        <p class="docs-body">Click any post, page, draft, or media item to open it in the editor or detail view. Right-click a post or page for the option to move it to trash.</p>
+        <p class="docs-body">To hide the sidebar and maximize writing space, click the <strong>sidebar icon</strong> at the left of the editor toolbar. Click it again to bring the sidebar back.</p>
+        <h3 class="docs-h3">The Editor</h3>
+        <p class="docs-body">The editor area has two parts:</p>
+        <ul class="docs-list">
+          <li><strong>Title field</strong> — A large text field at the top for the post or page title.</li>
+          <li><strong>Editor canvas</strong> — The main writing area below, powered by a rich text editor that produces clean WordPress-compatible HTML.</li>
+        </ul>
+        <p class="docs-body">Above the title field is the <strong>toolbar</strong>:</p>
+        <div class="docs-table-wrap">
+          <table class="docs-table">
+            <thead>
+              <tr><th>Control</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Sidebar toggle</td><td>Shows or hides the left sidebar</td></tr>
+              <tr><td>Status badge</td><td>Displays the current post status (Draft, Published, Scheduled, etc.)</td></tr>
+              <tr><td>Save Draft</td><td>Saves the current post as a local draft or syncs changes to WordPress</td></tr>
+              <tr><td>Revert</td><td>Discards unsaved changes and restores the last saved version</td></tr>
+              <tr><td>Preview</td><td>Opens the current post's preview URL in your browser</td></tr>
+              <tr><td>Publish</td><td>Publishes or updates the post on your WordPress site</td></tr>
+              <tr><td>Settings toggle</td><td>Shows or hides the right-side settings panel</td></tr>
+              <tr><td>✦</td><td>Opens the AI writing assistant (visible only when an Anthropic API key is configured)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="docs-body">A small amber dot appears next to Save Draft when you have unsaved local changes.</p>
+        <h3 class="docs-h3">The Settings Panel</h3>
+        <p class="docs-body">The settings panel slides in from the right when you click the settings toggle in the toolbar. It contains publishing options for the current post or page, including status, scheduling, categories, tags, slug, excerpt, discussion settings, and a word count summary. Page-specific options include parent page selection. See <a href="#post--page-settings" class="content-link">Post &amp; Page Settings</a> for full details.</p>
+        <h3 class="docs-h3">Empty State</h3>
+        <p class="docs-body">If no post or page is selected, the editor area displays a placeholder prompting you to select an item from the sidebar. Use the <strong>File</strong> menu or keyboard shortcuts to create new content.</p>
+      </section>
+
+      <section class="docs-section" id="writing--editing">
+        <h2 class="docs-h2">Writing &amp; Editing</h2>
+        <h3 class="docs-h3">Creating Posts and Pages</h3>
+        <p class="docs-body">Use the <strong>File</strong> menu to create new content:</p>
+        <div class="docs-table-wrap">
+          <table class="docs-table">
+            <thead>
+              <tr><th>Action</th><th>Shortcut</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>New Post</td><td>⌘N</td></tr>
+              <tr><td>New Page</td><td>⌘⇧N</td></tr>
+              <tr><td>New Media upload</td><td>⌘⌥N</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="docs-body">New posts and pages are created as <strong>local drafts</strong> and appear in the Drafts section of the sidebar immediately. They are saved only on your Mac until you publish them to WordPress.</p>
+        <h3 class="docs-h3">The Editor</h3>
+        <p class="docs-body">The editor is a rich text environment that produces clean, Gutenberg-compatible HTML. What you see is what gets published: headings, lists, blockquotes, and all formatting render as they will appear on your site.</p>
+        <p class="docs-body">The <strong>title field</strong> sits above the editor canvas. Click it to type or edit the post or page title.</p>
+        <h3 class="docs-h3">Formatting Toolbar</h3>
+        <p class="docs-body">The formatting toolbar runs across the top of the editor and provides access to all block and inline formatting tools.</p>
+        <h4 class="docs-h4">Block formatting</h4>
+        <div class="docs-table-wrap">
+          <table class="docs-table">
+            <thead>
+              <tr><th>Button</th><th>Function</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Paragraph / Heading</td><td>Dropdown menu to set the current block as Paragraph or Heading 1 through 6</td></tr>
+              <tr><td>Bullet list</td><td>Converts the current block to an unordered list</td></tr>
+              <tr><td>Number list</td><td>Converts the current block to an ordered list</td></tr>
+              <tr><td>Blockquote</td><td>Wraps the current block in a blockquote</td></tr>
+              <tr><td>Code block</td><td>Converts the current block to a preformatted code block</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h4 class="docs-h4">Inline formatting</h4>
+        <div class="docs-table-wrap">
+          <table class="docs-table">
+            <thead>
+              <tr><th>Button</th><th>Shortcut</th><th>Function</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>B</td><td>⌘B</td><td>Bold</td></tr>
+              <tr><td>I</td><td>⌘I</td><td>Italic</td></tr>
+              <tr><td>U</td><td>⌘U</td><td>Underline</td></tr>
+              <tr><td>S</td><td></td><td>Strikethrough</td></tr>
+              <tr><td><code>A</code></td><td></td><td>Inline code</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h4 class="docs-h4">Insert and utilities</h4>
+        <div class="docs-table-wrap">
+          <table class="docs-table">
+            <thead>
+              <tr><th>Button</th><th>Function</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Table</td><td>Inserts a table. When the cursor is inside a table, additional buttons appear to add/remove rows and columns or delete the table. See <a href="#tables" class="content-link">Tables</a> in Content Elements.</td></tr>
+              <tr><td>Link</td><td>Inserts or removes a hyperlink on the selected text. Opens the link picker, where you can type to search your WordPress posts, pages, and media by title, or paste any URL directly. Selecting a search result or pressing Enter applies the link. When editing an existing link, a Remove option is also available.</td></tr>
+              <tr><td>* (Footnote)</td><td>Inserts a footnote marker at the cursor position. See <a href="#footnotes" class="content-link">Footnotes</a> in Content Elements.</td></tr>
+              <tr><td>Embed</td><td>Inserts an embed (video, social post, etc.) by URL. See <a href="#embeds" class="content-link">Embeds</a> in Content Elements.</td></tr>
+              <tr><td>ABC (Spell check)</td><td>Runs a spell check on the document</td></tr>
+              <tr><td>&lt;/&gt; (Code view)</td><td>Toggles between the rich text editor and a raw HTML view</td></tr>
+              <tr><td>Image</td><td>Opens the media library picker to insert an image. See <a href="#images" class="content-link">Images</a> in Content Elements.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="docs-body">The image alignment buttons (left, center, right) appear in the toolbar only when an image is selected. See <a href="#images" class="content-link">Images</a> in Content Elements for full detail on resizing, captions, and alt text.</p>
+        <h3 class="docs-h3">Saving and Publishing</h3>
+        <p class="docs-body"><strong>For local drafts:</strong></p>
+        <ul class="docs-list">
+          <li>Click <strong>Save Draft</strong> or press <strong>⌘S</strong> to save your work locally. The draft remains on your Mac and does not touch WordPress.</li>
+          <li>Click <strong>Publish</strong> or press <strong>⌘⇧P</strong> to push the post to WordPress. After publishing, the post moves from Drafts to Posts or Pages in the sidebar.</li>
+        </ul>
+        <p class="docs-body"><strong>For posts and pages already on WordPress:</strong></p>
+        <ul class="docs-list">
+          <li>Press <strong>⌘S</strong> or click <strong>Publish</strong> to sync your changes to WordPress immediately.</li>
+          <li>An amber dot in the toolbar indicates you have unsaved changes.</li>
+          <li>Click <strong>Revert</strong> to discard unsaved changes and restore the last saved version.</li>
+        </ul>
+        <p class="docs-body"><strong>Autosave:</strong> Quill automatically saves your work every 30 seconds after a change. For remote posts, autosaves are stored locally and applied if you reopen a post before manually saving.</p>
+        <h3 class="docs-h3">Find and Replace</h3>
+        <p class="docs-body">Press <strong>⌘F</strong> to open the find and replace bar. Type in the <strong>Find</strong> field to highlight matches in the document. Use the arrow buttons or press <strong>↩</strong> (next) and <strong>⇧↩</strong> (previous) to navigate between matches. Toggle <strong>Aa</strong> to enable case-sensitive search.</p>
+        <p class="docs-body">To replace matches, type in the <strong>Replace</strong> field and click <strong>Replace</strong> to replace the current match or <strong>All</strong> to replace every match in the document. Press <strong>Esc</strong> to close the find bar.</p>
+        <h3 class="docs-h3">Spell Check</h3>
+        <p class="docs-body">Click the <strong>ABC</strong> button in the toolbar to check spelling. Right-clicking on any word in the editor while editing shows a context menu with spelling suggestions when a spelling error is detected under the cursor.</p>
+      </section>
+
+      <section class="docs-section" id="content-elements">
+        <h2 class="docs-h2">Content Elements</h2>
+
+        <h3 class="docs-h3" id="images">Images</h3>
+        <p class="docs-body">Click the <strong>Image</strong> button in the toolbar to open the media library picker and insert an image at the cursor position. See <a href="#media-library" class="content-link">Media Library</a> for details on uploading and browsing media. You can also drag an image file directly from Finder onto the editor canvas; Quill will upload it to your WordPress media library and insert it in one step.</p>
+        <p class="docs-body">Once an image is inserted, click it to select it. A floating image toolbar appears above the image, and alignment controls become available in the main toolbar.</p>
+        <h4 class="docs-h4">Resizing</h4>
+        <ul class="docs-list">
+          <li><strong>Drag handles</strong> — Eight handles appear around the selected image (corners and edges). Drag any handle to resize freely.</li>
+          <li><strong>W and H fields</strong> — Enter exact pixel dimensions in the width and height fields in the image toolbar.</li>
+          <li><strong>Reset</strong> — Click Reset to restore the image to its original full-resolution dimensions.</li>
+        </ul>
+        <h4 class="docs-h4">Preset sizes</h4>
+        <p class="docs-body">If the image was inserted from your WordPress media library, the image toolbar shows preset size buttons (<strong>Thumb</strong>, <strong>Medium</strong>, <strong>Large</strong>, and <strong>Full</strong>) corresponding to the sizes WordPress has generated for that image. Click a size to jump directly to those dimensions. These buttons only appear for images with a known media ID; externally linked images show only the manual W/H fields.</p>
+        <h4 class="docs-h4">Alt text</h4>
+        <p class="docs-body">Enter a description in the <strong>Alt</strong> field in the image toolbar. This text is saved with the image and used for accessibility and SEO. Alt text set in the media library is pre-populated automatically when you insert an image.</p>
+        <h4 class="docs-h4">Alignment</h4>
+        <p class="docs-body">Use the alignment buttons in the main toolbar (left, center, right) to float or center the image. These buttons are only visible when an image is selected.</p>
+        <h4 class="docs-h4">Captions</h4>
+        <p class="docs-body">Click below an image to place the cursor in the caption field and type a caption. Captions are saved as part of the Gutenberg image block.</p>
+
+        <h3 class="docs-h3" id="footnotes">Footnotes</h3>
+        <p class="docs-body">Quill has full support for WordPress-style footnotes. To insert a footnote, place the cursor where you want the marker to appear and click the <strong>*</strong> button in the toolbar, or right-click and choose <strong>Insert Footnote</strong> from the context menu.</p>
+        <p class="docs-body">When you insert a footnote, two things happen automatically:</p>
+        <ol class="docs-ol">
+          <li>A numbered superscript marker appears inline at the cursor position.</li>
+          <li>A footnote entry is added to a numbered list at the bottom of the document, where you can type the footnote text.</li>
+        </ol>
+        <ul class="docs-list">
+          <li><strong>Automatic numbering:</strong> Footnote markers are always numbered sequentially from 1 based on their position in the document. If you insert a footnote between two existing ones, or delete one, all numbers update automatically.</li>
+          <li><strong>Navigating between markers and entries:</strong> Each footnote entry at the bottom of the document has a <strong>↩</strong> button. Clicking it jumps your cursor back to the corresponding marker in the body text.</li>
+          <li><strong>Deleting footnotes:</strong> Delete the inline marker in the body text and the corresponding footnote entry is removed automatically. You cannot delete entries from the list directly; they are always kept in sync with the markers.</li>
+        </ul>
+        <p class="docs-body"><strong>On publish:</strong> Quill saves footnotes as standard WordPress block footnotes (<code>wp-block-footnotes</code>), fully compatible with the Gutenberg editor.</p>
+
+        <h3 class="docs-h3" id="tables">Tables</h3>
+        <p class="docs-body">Click the <strong>Table</strong> button in the toolbar to insert a table at the cursor position. A new table is created with a default set of rows and columns.</p>
+        <p class="docs-body">When the cursor is inside a table, additional buttons appear in the toolbar:</p>
+        <div class="docs-table-wrap">
+          <table class="docs-table">
+            <thead>
+              <tr><th>Button</th><th>Function</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>+Row</td><td>Inserts a row below the current row</td></tr>
+              <tr><td>+Col</td><td>Inserts a column to the right of the current column</td></tr>
+              <tr><td>−Row</td><td>Deletes the current row</td></tr>
+              <tr><td>−Col</td><td>Deletes the current column</td></tr>
+              <tr><td>✕</td><td>Deletes the entire table</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="docs-body">Press <strong>Tab</strong> to move forward through cells, or <strong>⇧Tab</strong> to move backward. Pressing Tab from the last cell in a row moves to the first cell of the next row.</p>
+        <p class="docs-body"><strong>Headers:</strong> The first row of the table is treated as a header row. Quill saves it as a proper <code>&lt;thead&gt;</code> element in the published HTML, consistent with how WordPress formats table blocks.</p>
+
+        <h3 class="docs-h3" id="embeds">Embeds</h3>
+        <p class="docs-body">Quill supports embedding content from external platforms (videos, social posts, audio, and more) directly in your posts and pages.</p>
+        <p class="docs-body">To insert an embed:</p>
+        <ol class="docs-ol">
+          <li>Click the <strong>Embed</strong> button in the toolbar.</li>
+          <li>A small input menu appears. Paste the URL of the content you want to embed.</li>
+          <li>Press <strong>Enter</strong> or click <strong>Insert</strong>.</li>
+        </ol>
+        <p class="docs-body">The embed appears in the editor as a card showing the URL. It will render as a live embed on your published site; Quill does not preview the embedded content.</p>
+        <div class="docs-table-wrap">
+          <table class="docs-table">
+            <thead>
+              <tr><th>Provider</th><th>Content type</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>YouTube</td><td>Video</td></tr>
+              <tr><td>Vimeo</td><td>Video</td></tr>
+              <tr><td>Twitter / X</td><td>Posts</td></tr>
+              <tr><td>Instagram</td><td>Posts</td></tr>
+              <tr><td>TikTok</td><td>Video</td></tr>
+              <tr><td>Spotify</td><td>Music / podcasts</td></tr>
+              <tr><td>SoundCloud</td><td>Audio</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="docs-body">URLs from providers not listed above are saved as generic embeds. WordPress will attempt to render them using its own oEmbed support.</p>
+        <div class="docs-note">Not all embeds may work as expected on your published site. Provider support depends on the platform's oEmbed implementation and can change without notice. X (formerly Twitter) is a known example where embed rendering is inconsistent.</div>
+      </section>
+
+      <section class="docs-section" id="post--page-settings">
+        <h2 class="docs-h2">Post &amp; Page Settings</h2>
+        <p class="docs-body">The settings panel is accessed by clicking the settings toggle button at the right end of the editor toolbar. It slides in from the right and contains all publishing options for the current post or page.</p>
+        <p class="docs-body">Changes made in the settings panel take effect when you next save or publish the post. They are not sent to WordPress automatically as you adjust them.</p>
+        <div class="docs-note">Settings are not saved for local drafts. The panel is visible but values will not be applied until you publish the post or page to WordPress.</div>
+        <h3 class="docs-h3">Status</h3>
+        <p class="docs-body">The Status picker controls the publish state of the post or page:</p>
+        <div class="docs-table-wrap">
+          <table class="docs-table">
+            <thead>
+              <tr><th>Status</th><th>Color</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Draft</td><td>Amber</td><td>Saved to WordPress but not publicly visible</td></tr>
+              <tr><td>Pending Review</td><td>Orange</td><td>Flagged for editorial review before publishing</td></tr>
+              <tr><td>Published</td><td>Green</td><td>Live and publicly visible</td></tr>
+              <tr><td>Scheduled</td><td>Blue</td><td>Will publish automatically at the specified date and time</td></tr>
+              <tr><td>Private</td><td>Teal</td><td>Visible only to logged-in WordPress administrators and editors</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="docs-body">Local drafts (posts and pages not yet synced to WordPress) show a <strong>Purple</strong> badge (posts) or <strong>Indigo</strong> badge (pages) in the toolbar and sidebar.</p>
+        <h3 class="docs-h3">Publish Date</h3>
+        <p class="docs-body">The Publish Date section appears for all statuses except Private. It contains a <strong>Schedule</strong> toggle. When turned on, the status is set to Scheduled and a date and time picker appears. When turned off, the status reverts to Draft if it was previously set to Scheduled.</p>
+        <p class="docs-body">You can also set scheduling by selecting <strong>Scheduled</strong> directly in the Status picker; the date picker will appear automatically with a default time one hour from now.</p>
+        <p class="docs-body">Once you have set the date and time, press <strong>⌘⇧P</strong> or click <strong>Publish</strong> to commit the scheduled post to WordPress. The post will publish automatically at the chosen time.</p>
+        <h3 class="docs-h3">Categories <span class="docs-meta">(Posts only)</span></h3>
+        <p class="docs-body">The categories section lists all categories on your site. Check a category to assign it to the post. Use the search field to filter categories by name.</p>
+        <p class="docs-body">To create a new category, type its name in the search field and press Enter. New categories are created on your WordPress site when the post is saved or published.</p>
+        <h3 class="docs-h3">Tags <span class="docs-meta">(Posts only)</span></h3>
+        <p class="docs-body">Tags work the same way as categories. Type in the search field to find existing tags or press Enter to create a new one. New tags are created on your WordPress site when the post is saved or published.</p>
+        <h3 class="docs-h3">Slug</h3>
+        <p class="docs-body">The slug is the URL-friendly identifier for the post or page, used in the permalink. Edit this field to customize the URL. Leave it blank to let WordPress generate one automatically from the title.</p>
+        <h3 class="docs-h3">Excerpt <span class="docs-meta">(Posts only)</span></h3>
+        <p class="docs-body">The excerpt is a short summary of the post, used by themes in archive and search result views. Type directly in the excerpt field. If left blank, WordPress will generate an automatic excerpt from the post body.</p>
+        <h3 class="docs-h3">Parent Page <span class="docs-meta">(Pages only)</span></h3>
+        <p class="docs-body">The Parent Page picker sets the hierarchy of the page. Select a parent page to nest this page beneath it in the URL structure, or leave it set to <strong>None (top-level)</strong> for a root-level page.</p>
+        <h3 class="docs-h3">Discussion</h3>
+        <p class="docs-body">The Discussion section contains a single <strong>Allow comments</strong> toggle. Turn it off to disable comments on the post or page.</p>
+        <h3 class="docs-h3">Stats</h3>
+        <p class="docs-body">The Stats section displays a live word count and character count for the current post, updated as you type. An estimated reading time is shown once the post has enough content, calculated at 238 words per minute and rounded up to the nearest minute.</p>
+      </section>
+
+      <section class="docs-section" id="media-library">
+        <h2 class="docs-h2">Media Library</h2>
+        <p class="docs-body">The Media Library gives you access to all files uploaded to your WordPress site. Switch to the <strong>Media</strong> tab in the sidebar to browse your library as a thumbnail grid.</p>
+        <h3 class="docs-h3">Browsing</h3>
+        <p class="docs-body">Media items are displayed as thumbnails for images. Non-image files (PDFs, documents, etc.) show a generic file icon. Click any item to open its detail view in the main panel.</p>
+        <p class="docs-body">If your library has more items than the current view, a <strong>Load More</strong> button appears at the bottom of the grid. Click it to fetch the next page of results.</p>
+        <h3 class="docs-h3">Detail View</h3>
+        <p class="docs-body">Clicking a media item opens a two-panel detail view: a large preview on the left and a metadata panel on the right.</p>
+        <div class="docs-table-wrap">
+          <table class="docs-table">
+            <thead>
+              <tr><th>Field</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Filename</td><td>The media item's title, or its filename if no title is set</td></tr>
+              <tr><td>Type</td><td>The file extension</td></tr>
+              <tr><td>Dimensions</td><td>Pixel dimensions (images only)</td></tr>
+              <tr><td>Alt Text</td><td>Editable alt text description (images only)</td></tr>
+              <tr><td>Uploaded</td><td>The date the file was uploaded</td></tr>
+              <tr><td>URL</td><td>The full URL of the file, with a copy button</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="docs-body"><strong>Alt text</strong> can be edited directly in the detail panel. Press <strong>Return</strong> or click away from the field to save the change to WordPress.</p>
+        <h3 class="docs-h3">Uploading</h3>
+        <p class="docs-body">To upload new media:</p>
+        <ul class="docs-list">
+          <li>Click the <strong>upload button</strong> at the top of the Media sidebar, or</li>
+          <li>Use <strong>File → New Media</strong> (<strong>⌘⌥N</strong>) from anywhere in the app.</li>
+        </ul>
+        <p class="docs-body">Both open a standard macOS file picker. Any file type supported by your WordPress installation can be uploaded. The new item appears at the top of the grid and its detail view opens automatically.</p>
+        <h3 class="docs-h3">Inserting Images into Posts</h3>
+        <p class="docs-body">To insert an image from your media library into a post or page, click the <strong>Image</strong> button in the editor toolbar while editing. This opens a picker sheet showing your media library. Click an image to insert it at the cursor position.</p>
+        <p class="docs-body">You can also drag an image file directly from Finder onto the editor canvas to upload and insert it in one step.</p>
+        <h3 class="docs-h3">Deleting Media</h3>
+        <p class="docs-body">Right-click any item in the media grid and select <strong>Delete</strong> to remove it. A confirmation prompt will appear before the deletion proceeds.</p>
+        <div class="docs-note"><strong>Warning:</strong> Deleting media is permanent. WordPress does not have a trash for media items; deletion cannot be undone.</div>
+      </section>
+
+      <section class="docs-section" id="ai-writing-features">
+        <h2 class="docs-h2">AI Writing Features</h2>
+        <p class="docs-body">Quill includes an optional AI writing assistant powered by the Anthropic Claude API, using the Claude Haiku model. AI features are disabled by default and require your own Anthropic API key to use. Usage is billed directly by Anthropic based on your API consumption.</p>
+        <h3 class="docs-h3">Setup</h3>
+        <ol class="docs-ol">
+          <li>Create an API key at <a href="https://platform.claude.com/dashboard" class="content-link" target="_blank" rel="noopener">platform.claude.com/dashboard</a>.</li>
+          <li>Open <strong>Quill → Settings</strong> (<strong>⌘,</strong>) and find the <strong>AI Writing</strong> section.</li>
+          <li>Paste your key into the <strong>Anthropic API Key</strong> field and click <strong>Save</strong>.</li>
+        </ol>
+        <p class="docs-body">Once a valid key is saved, the <strong>✦</strong> button appears in the editor toolbar.</p>
+        <h3 class="docs-h3">Writing Style</h3>
+        <p class="docs-body">Quill can learn your writing style by analyzing posts from your blog. In the AI Writing section of Settings, click <strong>Choose Sample Posts</strong> and select up to 5 posts that are representative of how you write. When you save, Quill sends those posts to Claude to generate a concise style guide, which is then used to inform all AI writing operations.</p>
+        <p class="docs-body">The style guide is regenerated automatically when you change your sample post selection. If you switch to a different WordPress site, the sample selection is cleared and you will need to set it again for the new site.</p>
+        <h3 class="docs-h3">Web Search</h3>
+        <p class="docs-body">The <strong>Web Search</strong> toggle in Settings allows the Generate Post feature to search the web for current information when composing a post. Disable it to generate posts using only Claude's existing knowledge, which is faster and uses less API budget.</p>
+        <h3 class="docs-h3">Generating a Post</h3>
+        <p class="docs-body">Click the <strong>✦</strong> button in the editor toolbar to open the post generator. Type a topic, title idea, or detailed prompt describing what you want, then click <strong>Generate</strong>.</p>
+        <p class="docs-body">Quill will write a complete post, including a title and structured body, and load it into the editor. If web search is enabled, Claude will research the topic before writing.</p>
+        <p class="docs-body">If the editor already contains content, you will be asked to confirm before the existing content is replaced.</p>
+        <p class="docs-body">If the generated post is long and hits an initial length limit, Quill will offer to continue generating for the full version. Choosing to continue uses additional API budget.</p>
+        <h3 class="docs-h3">In-Editor AI Operations</h3>
+        <p class="docs-body">With text selected in the editor, right-click to access AI writing operations:</p>
+        <div class="docs-table-wrap">
+          <table class="docs-table">
+            <thead>
+              <tr><th>Operation</th><th>What it does</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Make Longer</td><td>Expands the selected content with more detail and depth</td></tr>
+              <tr><td>Make Shorter</td><td>Condenses the selected content while preserving the key points</td></tr>
+              <tr><td>To Table</td><td>Converts the selected content into an HTML table</td></tr>
+              <tr><td>To List</td><td>Converts the selected content into a bulleted or numbered list</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="docs-body">These operations work on the selected text only and do not use web search. The result appears inline in the editor with an <strong>Accept</strong> or <strong>Discard</strong> panel. Accept to keep the change, or discard to restore the original text.</p>
+      </section>
+
+      <section class="docs-section" id="keyboard-reference">
+        <h2 class="docs-h2">Keyboard Reference</h2>
+        <h3 class="docs-h3">App</h3>
+        <div class="docs-table-wrap">
+          <table class="docs-table">
+            <thead>
+              <tr><th>Shortcut</th><th>Action</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>⌘N</td><td>New Post</td></tr>
+              <tr><td>⌘⇧N</td><td>New Page</td></tr>
+              <tr><td>⌘⌥N</td><td>New Media upload</td></tr>
+              <tr><td>⌘,</td><td>Open Settings</td></tr>
+              <tr><td>⌘F</td><td>Open Find &amp; Replace</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 class="docs-h3">Editor</h3>
+        <div class="docs-table-wrap">
+          <table class="docs-table">
+            <thead>
+              <tr><th>Shortcut</th><th>Action</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>⌘S</td><td>Save Draft (local drafts) / Update post on WordPress</td></tr>
+              <tr><td>⌘⇧P</td><td>Publish / Update</td></tr>
+              <tr><td>⌘Z</td><td>Undo</td></tr>
+              <tr><td>⌘⇧Z</td><td>Redo</td></tr>
+              <tr><td>⌘B</td><td>Bold</td></tr>
+              <tr><td>⌘I</td><td>Italic</td></tr>
+              <tr><td>⌘U</td><td>Underline</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 class="docs-h3">Find &amp; Replace</h3>
+        <div class="docs-table-wrap">
+          <table class="docs-table">
+            <thead>
+              <tr><th>Shortcut</th><th>Action</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>↩</td><td>Next match</td></tr>
+              <tr><td>⇧↩</td><td>Previous match</td></tr>
+              <tr><td>Esc</td><td>Close find bar</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 class="docs-h3">Tables</h3>
+        <div class="docs-table-wrap">
+          <table class="docs-table">
+            <thead>
+              <tr><th>Shortcut</th><th>Action</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Tab</td><td>Move to next cell</td></tr>
+              <tr><td>⇧Tab</td><td>Move to previous cell</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 class="docs-h3">AI</h3>
+        <div class="docs-table-wrap">
+          <table class="docs-table">
+            <thead>
+              <tr><th>Shortcut</th><th>Action</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>⌘↩</td><td>Generate post (in the Generate Post sheet)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="docs-section" id="limitations--compatibility">
+        <h2 class="docs-h2">Limitations &amp; Compatibility</h2>
+        <h3 class="docs-h3">WordPress.com</h3>
+        <p class="docs-body">Quill connects only to self-hosted WordPress installations. WordPress.com sites are not supported, regardless of plan. This is a deliberate scope decision; Quill is built specifically for users who run their own WordPress installations.</p>
+        <h3 class="docs-h3">One Site at a Time</h3>
+        <p class="docs-body">Quill stores credentials for a single WordPress site. To switch sites, update your credentials in Settings. There is no multi-site management.</p>
+        <h3 class="docs-h3">Gutenberg Block Compatibility</h3>
+        <p class="docs-body">Quill produces clean, Gutenberg-compatible HTML for the content types it supports: paragraphs, headings, lists, blockquotes, code blocks, images, tables, embeds, footnotes, and links. Posts you write in Quill will round-trip correctly through the Gutenberg editor.</p>
+        <p class="docs-body">However, if you open a post that was created in Gutenberg using block types Quill does not support (such as galleries, columns, cover blocks, or custom blocks) those blocks will be visible in the <strong>Code View</strong> (<code>&lt;/&gt;</code>) but will not render in the visual editor. If you make visual edits to the post and save, unsupported block markup may be lost.</p>
+        <p class="docs-body">To edit posts that contain unsupported blocks, use Code View to work with the raw HTML directly, or make your edits in the WordPress Gutenberg editor instead.</p>
+        <h3 class="docs-h3">Featured Image</h3>
+        <p class="docs-body">Quill reads and preserves a post's featured image setting. If a featured image is already assigned in WordPress, it will be maintained when you save from Quill. However, there is no UI in Quill to set or change the featured image. To assign a featured image for the first time, use the WordPress admin.</p>
+        <h3 class="docs-h3">Not a Full WordPress Admin</h3>
+        <p class="docs-body">Quill is a writing tool, not a replacement for the WordPress dashboard. The following are outside its scope:</p>
+        <ul class="docs-list">
+          <li>Theme and site customization</li>
+          <li>Plugin management</li>
+          <li>Comment moderation</li>
+          <li>User and role management</li>
+          <li>Revision history</li>
+          <li>Media editing (cropping, rotating, etc.)</li>
+        </ul>
+        <h3 class="docs-h3">Apple Notarization</h3>
+        <p class="docs-body">Quill is not notarized by Apple. macOS will require a one-time security bypass on first launch, as described in <a href="#requirements--installation" class="content-link">Requirements &amp; Installation</a>. After that, the app opens normally.</p>
+      </section>
+
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__col">
+        <p class="footer__logo">Quill — A native macOS app for WordPress</p>
+        <p class="footer__disclaimer">Quill is provided as-is. No support is offered. <a href="https://github.com/cpoteet/Quill-Releases/issues">Feedback and bug reports</a> are welcome but responses and fixes are not guaranteed. Use at your own risk.</p>
+      </div>
+      <div class="footer__col">
+        <p class="footer__disclaimer">© 2026 <a href="https://www.siolon.com" target="_blank" rel="noopener">Chris Poteet</a> · <a href="license.html">License</a> · <a href="privacy.html">Privacy</a></p>
+        <p class="footer__disclaimer">Uses <a href="https://tiptap.dev" target="_blank" rel="noopener">Tiptap</a> (© Tiptap GmbH), <a href="https://prosemirror.net" target="_blank" rel="noopener">ProseMirror</a> (© Marijn Haverbeke et al.), and <a href="https://github.com/stephencelis/SQLite.swift" target="_blank" rel="noopener">SQLite.swift</a> (© Stephen Celis) under the MIT License.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const sections = document.querySelectorAll('.docs-section[id]');
+      const tocLinks = document.querySelectorAll('.docs-toc__link');
+      const NAV_HEIGHT = 80;
+
+      function update() {
+        let activeId = null;
+        let maxTop = -Infinity;
+
+        sections.forEach(function (section) {
+          const top = section.getBoundingClientRect().top;
+          if (top <= NAV_HEIGHT && top > maxTop) {
+            maxTop = top;
+            activeId = section.id;
+          }
+        });
+
+        if (!activeId && sections.length) {
+          activeId = sections[0].id;
+        }
+
+        tocLinks.forEach(function (link) {
+          link.classList.toggle('docs-toc__link--active', link.getAttribute('href') === '#' + activeId);
+        });
+      }
+
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+  </script>
+</body>
+</html>
