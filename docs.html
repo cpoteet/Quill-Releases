@@ -154,7 +154,6 @@
               <tr><td>Preview</td><td>Opens the current post's preview URL in your browser</td></tr>
               <tr><td>Publish</td><td>Publishes or updates the post on your WordPress site</td></tr>
               <tr><td>Settings toggle</td><td>Shows or hides the right-side settings panel</td></tr>
-              <tr><td>✦</td><td>Opens the AI writing assistant (visible only when an Anthropic API key is configured)</td></tr>
             </tbody>
           </table>
         </div>
@@ -231,6 +230,8 @@
               <tr><td>ABC (Spell check)</td><td>Runs a spell check on the document</td></tr>
               <tr><td>&lt;/&gt; (Code view)</td><td>Toggles between the rich text editor and a raw HTML view</td></tr>
               <tr><td>Image</td><td>Opens the media library picker to insert an image. See <a href="#images" class="content-link">Images</a> in Content Elements.</td></tr>
+              <tr><td>Pencil (Generate)</td><td>Opens the AI content generator. Visible only when an Anthropic API key is configured. See <a href="#ai-writing-features" class="content-link">AI Writing Features</a>.</td></tr>
+              <tr><td>Checkmark-circle (Evaluate)</td><td>Opens the AI writing evaluator. Visible only when an Anthropic API key is configured. See <a href="#ai-writing-features" class="content-link">AI Writing Features</a>.</td></tr>
             </tbody>
           </table>
         </div>
@@ -245,7 +246,7 @@
         <ul class="docs-list">
           <li>Press <strong>⌘S</strong> or click <strong>Publish</strong> to sync your changes to WordPress immediately.</li>
           <li>An amber dot in the toolbar indicates you have unsaved changes.</li>
-          <li>Click <strong>Revert</strong> to discard unsaved changes and restore the last saved version.</li>
+          <li>Click <strong>Revert</strong> to discard unsaved changes and restore the last saved version. A confirmation sheet appears; press <strong>⌘↩</strong> to confirm or <strong>Escape</strong> to cancel.</li>
         </ul>
         <p class="docs-body"><strong>Autosave:</strong> Quill automatically saves your work every 30 seconds after a change. For remote posts, autosaves are stored locally and applied if you reopen a post before manually saving.</p>
         <h3 class="docs-h3">Find and Replace</h3>
@@ -372,10 +373,10 @@
         <p class="docs-body">You can also set scheduling by selecting <strong>Scheduled</strong> directly in the Status picker; the date picker will appear automatically with a default time one hour from now.</p>
         <p class="docs-body">Once you have set the date and time, press <strong>⌘⇧P</strong> or click <strong>Publish</strong> to commit the scheduled post to WordPress. The post will publish automatically at the chosen time.</p>
         <h3 class="docs-h3">Categories <span class="docs-meta">(Posts only)</span></h3>
-        <p class="docs-body">The categories section lists all categories on your site. Check a category to assign it to the post. Use the search field to filter categories by name.</p>
+        <p class="docs-body">The categories section lists all categories on your site. Check a category to assign it to the post. Checked categories always sort to the top of the list (alphabetically), followed by unchecked categories (also alphabetically), making your active selections easy to see. Use the search field to filter categories by name.</p>
         <p class="docs-body">To create a new category, type its name in the search field and press Enter. New categories are created on your WordPress site when the post is saved or published.</p>
         <h3 class="docs-h3">Tags <span class="docs-meta">(Posts only)</span></h3>
-        <p class="docs-body">Tags work the same way as categories. Type in the search field to find existing tags or press Enter to create a new one. New tags are created on your WordPress site when the post is saved or published.</p>
+        <p class="docs-body">Tags work similarly to categories. Selected tags appear as chips above the search field, sorted alphabetically. Type in the search field to find existing tags or press Enter to create a new one. New tags are created on your WordPress site when the post is saved or published.</p>
         <h3 class="docs-h3">Slug</h3>
         <p class="docs-body">The slug is the URL-friendly identifier for the post or page, used in the permalink. Edit this field to customize the URL. Leave it blank to let WordPress generate one automatically from the title.</p>
         <h3 class="docs-h3">Excerpt <span class="docs-meta">(Posts only)</span></h3>
@@ -429,24 +430,37 @@
 
       <section class="docs-section" id="ai-writing-features">
         <h2 class="docs-h2">AI Writing Features</h2>
-        <p class="docs-body">Quill includes an optional AI writing assistant powered by the Anthropic Claude API, using the Claude Haiku model. AI features are disabled by default and require your own Anthropic API key to use. Usage is billed directly by Anthropic based on your API consumption.</p>
+        <p class="docs-body">Quill includes an optional AI writing assistant powered by the Anthropic Claude API. AI features are disabled by default and require your own Anthropic API key to use. Usage is billed directly by Anthropic based on your API consumption.</p>
+        <p class="docs-body">When configured, Quill's AI features let you generate complete posts and pages from a prompt, rewrite selected text, and evaluate the writing quality of your content.</p>
         <h3 class="docs-h3">Setup</h3>
         <ol class="docs-ol">
           <li>Create an API key at <a href="https://platform.claude.com/dashboard" class="content-link" target="_blank" rel="noopener">platform.claude.com/dashboard</a>.</li>
           <li>Open <strong>Quill → Settings</strong> (<strong>⌘,</strong>) and find the <strong>AI Writing</strong> section.</li>
           <li>Paste your key into the <strong>Anthropic API Key</strong> field and click <strong>Save</strong>.</li>
         </ol>
-        <p class="docs-body">Once a valid key is saved, the <strong>✦</strong> button appears in the editor toolbar.</p>
+        <p class="docs-body">Once a valid key is saved, a <strong>pencil</strong> button (Generate) and a <strong>checkmark-circle</strong> button (Evaluate) appear in the editor toolbar.</p>
         <h3 class="docs-h3">Writing Style</h3>
         <p class="docs-body">Quill can learn your writing style by analyzing posts from your blog. In the AI Writing section of Settings, click <strong>Choose Sample Posts</strong> and select up to 5 posts that are representative of how you write. When you save, Quill sends those posts to Claude to generate a concise style guide, which is then used to inform all AI writing operations.</p>
         <p class="docs-body">The style guide is regenerated automatically when you change your sample post selection. If you switch to a different WordPress site, the sample selection is cleared and you will need to set it again for the new site.</p>
         <h3 class="docs-h3">Web Search</h3>
-        <p class="docs-body">The <strong>Web Search</strong> toggle in Settings allows the Generate Post feature to search the web for current information when composing a post. Disable it to generate posts using only Claude's existing knowledge, which is faster and uses less API budget.</p>
-        <h3 class="docs-h3">Generating a Post</h3>
-        <p class="docs-body">Click the <strong>✦</strong> button in the editor toolbar to open the post generator. Type a topic, title idea, or detailed prompt describing what you want, then click <strong>Generate</strong>.</p>
-        <p class="docs-body">Quill will write a complete post, including a title and structured body, and load it into the editor. If web search is enabled, Claude will research the topic before writing.</p>
-        <p class="docs-body">If the editor already contains content, you will be asked to confirm before the existing content is replaced.</p>
-        <p class="docs-body">If the generated post is long and hits an initial length limit, Quill will offer to continue generating for the full version. Choosing to continue uses additional API budget.</p>
+        <p class="docs-body">The <strong>Web Search</strong> toggle in Settings allows the Generate Content feature to search the web for current information when composing a post. Disable it to generate posts using only Claude's existing knowledge, which is faster and uses less API budget.</p>
+        <h3 class="docs-h3">Generating Content</h3>
+        <p class="docs-body">Click the <strong>pencil icon</strong> in the editor toolbar to open the content generator. Type a topic, title idea, or detailed prompt describing what you want, then click <strong>Generate</strong>.</p>
+        <p class="docs-body">Quill will write a complete post or page, including a title and structured body, and load it into the editor. If web search is enabled, Claude will research the topic before writing.</p>
+        <p class="docs-body">If the editor already contains content, a <strong>Replace Content?</strong> confirmation sheet appears first. Press <strong>⌘↩</strong> to proceed or <strong>Escape</strong> (or Cancel) to go back.</p>
+        <p class="docs-body">If the generated content is long and hits an initial length limit, a <strong>Post may be cut off</strong> sheet appears. Choose <strong>Get Full Version</strong> (<strong>⌘↩</strong>) to request a longer response, or <strong>Use What I Have</strong> to accept the draft as-is. Getting the full version uses additional API budget.</p>
+        <h3 class="docs-h3">Evaluating Writing Quality</h3>
+        <p class="docs-body">Click the <strong>checkmark-circle icon</strong> in the editor toolbar to evaluate the current post or page. The editor must contain at least around 100 words for evaluation to be available.</p>
+        <p class="docs-body">Quill sends the full content to Claude and displays an <strong>Evaluation panel</strong> on the right side of the editor. The panel shows:</p>
+        <ul class="docs-list">
+          <li>A short prose <strong>summary</strong> of the overall writing quality</li>
+          <li>A list of specific <strong>findings</strong>, each tagged with a category — Grammar, Clarity, Readability, Wordiness, Passive Voice, or Tone — and an optional suggested rewrite</li>
+        </ul>
+        <p class="docs-body"><strong>Jumping to a finding:</strong> Click any finding card to jump directly to that sentence in the editor. The full sentence is selected and scrolled into view so you can read the finding in context.</p>
+        <p class="docs-body"><strong>Re-evaluating:</strong> Click <strong>↺ Re-evaluate</strong> at the bottom of the panel to run another pass after making edits.</p>
+        <p class="docs-body"><strong>Style awareness:</strong> If you have configured a writing style guide using sample posts (see Writing Style above), Claude uses it during evaluation to distinguish your intentional voice from genuine issues. Stylistic choices consistent with your established writing will not be flagged.</p>
+        <p class="docs-body">The checkmark-circle button is highlighted while the evaluation panel is open and is disabled while an evaluation is running.</p>
+
         <h3 class="docs-h3">In-Editor AI Operations</h3>
         <p class="docs-body">With text selected in the editor, right-click to access AI writing operations:</p>
         <div class="docs-table-wrap">
@@ -531,7 +545,7 @@
               <tr><th>Shortcut</th><th>Action</th></tr>
             </thead>
             <tbody>
-              <tr><td>⌘↩</td><td>Generate post (in the Generate Post sheet)</td></tr>
+              <tr><td>⌘↩</td><td>Confirm primary action in any confirmation sheet (Generate Content, Replace Content?, Revert to Server Version?, Conflict Detected, Post may be cut off)</td></tr>
             </tbody>
           </table>
         </div>

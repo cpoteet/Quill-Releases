@@ -35,6 +35,53 @@
     <article class="release">
       <div class="release__inner">
         <div class="release__header">
+          <span class="release__version">v1.8.0</span>
+          <span class="release__date">June 18, 2026</span>
+        </div>
+
+        <div class="release__section">
+          <h2 class="release__section-title">What's New</h2>
+
+          <div class="release__feature">
+            <h3 class="release__feature-title">Post Evaluation</h3>
+            <p class="release__body">AI-powered writing critique panel. Click the checkmark-circle button in the editor toolbar to analyze your post and get categorized findings — Grammar, Clarity, Readability, Wordiness, Passive Voice, Tone — with click-to-jump navigation to the flagged passage in your draft. Style-aware: respects your established voice when judging.</p>
+          </div>
+
+          <div class="release__feature">
+            <h3 class="release__feature-title">AI Buttons in the Editor Toolbar</h3>
+            <p class="release__body">The Generate (pencil) and Evaluate (checkmark-circle) buttons now live inside the Tiptap formatting toolbar, alongside Bold, Italic, and other controls, instead of in the SwiftUI window chrome.</p>
+          </div>
+
+          <div class="release__feature">
+            <h3 class="release__feature-title">New App Icon</h3>
+            <p class="release__body">Refreshed icon for v1.8.0.</p>
+          </div>
+        </div>
+
+        <div class="release__section">
+          <h2 class="release__section-title">Improvements</h2>
+          <ul class="release__list">
+            <li><strong>Polished confirmation sheets</strong> — Revert, Replace, Conflict, and Truncation dialogs have updated styling.</li>
+            <li><strong>Sorted categories and tags</strong> — Categories and tags in the Post Settings panel are now sorted alphabetically.</li>
+            <li><strong>Toolbar tooltip tweaks</strong> — Arrow alignment and copy improvements.</li>
+          </ul>
+        </div>
+
+        <div class="release__section">
+          <h2 class="release__section-title">Fixes</h2>
+          <ul class="release__list">
+            <li>Evaluation task is now cancelled when switching posts, preventing stale results from appearing on the wrong post.</li>
+            <li>Fixed generate dialog title and jump-to-finding focus behavior.</li>
+            <li>AI overwrite alert no longer triggers on posts with no real content.</li>
+            <li>Fixed adjacent inline elements collapsing in text extraction.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="release__inner">
+        <div class="release__header">
           <span class="release__version">v1.7.0</span>
           <span class="release__date">June 16, 2026</span>
         </div>
