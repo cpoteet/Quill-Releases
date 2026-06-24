@@ -144,7 +144,7 @@
         <div class="docs-table-wrap">
           <table class="docs-table">
             <thead>
-              <tr><th>Control</th><th>Description</th></tr>
+              <tr><th class="docs-table__col--label">Control</th><th>Description</th></tr>
             </thead>
             <tbody>
               <tr><td>Sidebar toggle</td><td>Shows or hides the left sidebar</td></tr>
@@ -171,7 +171,7 @@
         <div class="docs-table-wrap">
           <table class="docs-table">
             <thead>
-              <tr><th>Action</th><th>Shortcut</th></tr>
+              <tr><th>Action</th><th class="docs-table__col--key">Shortcut</th></tr>
             </thead>
             <tbody>
               <tr><td>New Post</td><td>⌘N</td></tr>
@@ -190,14 +190,14 @@
         <div class="docs-table-wrap">
           <table class="docs-table">
             <thead>
-              <tr><th>Button</th><th>Function</th></tr>
+              <tr><th class="docs-table__col--label">Button</th><th class="docs-table__col--key">Shortcut</th><th>Function</th></tr>
             </thead>
             <tbody>
-              <tr><td>Paragraph / Heading</td><td>Dropdown menu to set the current block as Paragraph or Heading 1 through 6</td></tr>
-              <tr><td>Bullet list</td><td>Converts the current block to an unordered list</td></tr>
-              <tr><td>Number list</td><td>Converts the current block to an ordered list</td></tr>
-              <tr><td>Blockquote</td><td>Wraps the current block in a blockquote</td></tr>
-              <tr><td>Code block</td><td>Converts the current block to a preformatted code block</td></tr>
+              <tr><td>Paragraph / Heading</td><td></td><td>Dropdown menu to set the current block as Paragraph or Heading 1 through 6</td></tr>
+              <tr><td>Bullet list</td><td>⌘⇧8</td><td>Converts the current block to an unordered list</td></tr>
+              <tr><td>Number list</td><td>⌘⇧7</td><td>Converts the current block to an ordered list</td></tr>
+              <tr><td>Blockquote</td><td>⌘⇧B</td><td>Wraps the current block in a blockquote</td></tr>
+              <tr><td>Code block</td><td>⌘⌥C</td><td>Converts the current block to a preformatted code block</td></tr>
             </tbody>
           </table>
         </div>
@@ -205,14 +205,14 @@
         <div class="docs-table-wrap">
           <table class="docs-table">
             <thead>
-              <tr><th>Button</th><th>Shortcut</th><th>Function</th></tr>
+              <tr><th class="docs-table__col--key">Button</th><th class="docs-table__col--key">Shortcut</th><th>Function</th></tr>
             </thead>
             <tbody>
               <tr><td>B</td><td>⌘B</td><td>Bold</td></tr>
               <tr><td>I</td><td>⌘I</td><td>Italic</td></tr>
               <tr><td>U</td><td>⌘U</td><td>Underline</td></tr>
-              <tr><td>S</td><td></td><td>Strikethrough</td></tr>
-              <tr><td><code>A</code></td><td></td><td>Inline code</td></tr>
+              <tr><td>S</td><td>⌘⇧X</td><td>Strikethrough</td></tr>
+              <tr><td><code>A</code></td><td>⌘E</td><td>Inline code</td></tr>
             </tbody>
           </table>
         </div>
@@ -220,7 +220,7 @@
         <div class="docs-table-wrap">
           <table class="docs-table">
             <thead>
-              <tr><th>Button</th><th>Function</th></tr>
+              <tr><th class="docs-table__col--label">Button</th><th>Function</th></tr>
             </thead>
             <tbody>
               <tr><td>Table</td><td>Inserts a table. When the cursor is inside a table, additional buttons appear to add/remove rows and columns or delete the table. See <a href="#tables" class="content-link">Tables</a> in Content Elements.</td></tr>
@@ -295,6 +295,7 @@
           <li><strong>Navigating between markers and entries:</strong> Each footnote entry at the bottom of the document has a <strong>↩︎</strong> button. Clicking it jumps your cursor back to the corresponding marker in the body text.</li>
           <li><strong>Deleting footnotes:</strong> Delete the inline marker in the body text and the corresponding footnote entry is removed automatically. You cannot delete entries from the list directly; they are always kept in sync with the markers.</li>
         </ul>
+        <p class="docs-body"><strong>Content restrictions:</strong> Footnotes support only inline content — bold, italic, strikethrough, inline code, and links. Block elements such as images, headings, lists, tables, and blockquotes cannot be inserted inside footnotes. The toolbar buttons for these elements are disabled when the cursor is inside a footnote entry. If you paste content containing block elements into a footnote, the block structure is stripped and only the text and inline formatting are kept.</p>
         <p class="docs-body"><strong>On publish:</strong> Quill saves footnotes as standard WordPress block footnotes (<code>wp-block-footnotes</code>), fully compatible with the Gutenberg editor.</p>
 
         <h3 class="docs-h3" id="tables">Tables</h3>
@@ -303,7 +304,7 @@
         <div class="docs-table-wrap">
           <table class="docs-table">
             <thead>
-              <tr><th>Button</th><th>Function</th></tr>
+              <tr><th class="docs-table__col--key">Button</th><th>Function</th></tr>
             </thead>
             <tbody>
               <tr><td>+Row</td><td>Inserts a row below the current row</td></tr>
@@ -356,7 +357,7 @@
         <div class="docs-table-wrap">
           <table class="docs-table">
             <thead>
-              <tr><th>Status</th><th>Color</th><th>Description</th></tr>
+              <tr><th class="docs-table__col--label">Status</th><th class="docs-table__col--key">Color</th><th>Description</th></tr>
             </thead>
             <tbody>
               <tr><td>Draft</td><td>Amber</td><td>Saved to WordPress but not publicly visible</td></tr>
@@ -400,7 +401,7 @@
         <div class="docs-table-wrap">
           <table class="docs-table">
             <thead>
-              <tr><th>Field</th><th>Description</th></tr>
+              <tr><th class="docs-table__col--label">Field</th><th>Description</th></tr>
             </thead>
             <tbody>
               <tr><td>Filename</td><td>The media item's title, or its filename if no title is set</td></tr>
@@ -466,7 +467,7 @@
         <div class="docs-table-wrap">
           <table class="docs-table">
             <thead>
-              <tr><th>Operation</th><th>What it does</th></tr>
+              <tr><th class="docs-table__col--label">Operation</th><th>What it does</th></tr>
             </thead>
             <tbody>
               <tr><td>Make Longer</td><td>Expands the selected content with more detail and depth</td></tr>
@@ -477,6 +478,7 @@
           </table>
         </div>
         <p class="docs-body">These operations work on the selected text only and do not use web search. The result appears inline in the editor with an <strong>Accept</strong> or <strong>Discard</strong> panel. Accept to keep the change, or discard to restore the original text.</p>
+        <p class="docs-body"><strong>Lists and tables:</strong> When your selection is inside a list or table, Make Longer and Make Shorter automatically detect the structure and apply changes that preserve the format — expanding or condensing individual list items or table cells rather than converting them to plain paragraphs.</p>
       </section>
 
       <section class="docs-section" id="keyboard-reference">
@@ -485,7 +487,7 @@
         <div class="docs-table-wrap">
           <table class="docs-table">
             <thead>
-              <tr><th>Shortcut</th><th>Action</th></tr>
+              <tr><th class="docs-table__col--key">Shortcut</th><th>Action</th></tr>
             </thead>
             <tbody>
               <tr><td>⌘N</td><td>New Post</td></tr>
@@ -500,7 +502,7 @@
         <div class="docs-table-wrap">
           <table class="docs-table">
             <thead>
-              <tr><th>Shortcut</th><th>Action</th></tr>
+              <tr><th class="docs-table__col--key">Shortcut</th><th>Action</th></tr>
             </thead>
             <tbody>
               <tr><td>⌘S</td><td>Save Draft (local drafts) / Update post on WordPress</td></tr>
@@ -510,6 +512,12 @@
               <tr><td>⌘B</td><td>Bold</td></tr>
               <tr><td>⌘I</td><td>Italic</td></tr>
               <tr><td>⌘U</td><td>Underline</td></tr>
+              <tr><td>⌘⇧X</td><td>Strikethrough</td></tr>
+              <tr><td>⌘E</td><td>Inline code</td></tr>
+              <tr><td>⌘⇧8</td><td>Bullet list</td></tr>
+              <tr><td>⌘⇧7</td><td>Ordered list</td></tr>
+              <tr><td>⌘⇧B</td><td>Blockquote</td></tr>
+              <tr><td>⌘⌥C</td><td>Code block</td></tr>
             </tbody>
           </table>
         </div>
@@ -517,7 +525,7 @@
         <div class="docs-table-wrap">
           <table class="docs-table">
             <thead>
-              <tr><th>Shortcut</th><th>Action</th></tr>
+              <tr><th class="docs-table__col--key">Shortcut</th><th>Action</th></tr>
             </thead>
             <tbody>
               <tr><td>↩︎</td><td>Next match</td></tr>
@@ -530,7 +538,7 @@
         <div class="docs-table-wrap">
           <table class="docs-table">
             <thead>
-              <tr><th>Shortcut</th><th>Action</th></tr>
+              <tr><th class="docs-table__col--key">Shortcut</th><th>Action</th></tr>
             </thead>
             <tbody>
               <tr><td>Tab</td><td>Move to next cell</td></tr>
@@ -542,7 +550,7 @@
         <div class="docs-table-wrap">
           <table class="docs-table">
             <thead>
-              <tr><th>Shortcut</th><th>Action</th></tr>
+              <tr><th class="docs-table__col--key">Shortcut</th><th>Action</th></tr>
             </thead>
             <tbody>
               <tr><td>⌘↩︎</td><td>Confirm primary action in any confirmation sheet (Generate Content, Replace Content?, Revert to Server Version?, Conflict Detected, Post may be cut off)</td></tr>
@@ -558,7 +566,7 @@
         <h3 class="docs-h3">One Site at a Time</h3>
         <p class="docs-body">Quill stores credentials for a single WordPress site. To switch sites, update your credentials in Settings. There is no multi-site management.</p>
         <h3 class="docs-h3">Gutenberg Block Compatibility</h3>
-        <p class="docs-body">Quill produces clean, Gutenberg-compatible HTML for the content types it supports: paragraphs, headings, lists, blockquotes, code blocks, images, tables, embeds, footnotes, and links. Posts you write in Quill will round-trip correctly through the Gutenberg editor.</p>
+        <p class="docs-body">Quill produces clean, Gutenberg-compatible HTML for the content types it supports: paragraphs, headings, lists, blockquotes, code blocks, horizontal rules, images, tables, embeds, footnotes, and links. Posts you write in Quill will round-trip correctly through the Gutenberg editor.</p>
         <p class="docs-body">However, if you open a post that was created in Gutenberg using block types Quill does not support (such as galleries, columns, cover blocks, or custom blocks) those blocks will be visible in the <strong>Code View</strong> (<code>&lt;/&gt;</code>) but will not render in the visual editor. If you make visual edits to the post and save, unsupported block markup may be lost.</p>
         <p class="docs-body">To edit posts that contain unsupported blocks, use Code View to work with the raw HTML directly, or make your edits in the WordPress Gutenberg editor instead.</p>
         <h3 class="docs-h3">Featured Image</h3>

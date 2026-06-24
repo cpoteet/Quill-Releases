@@ -964,6 +964,9 @@ html {
   border-bottom: none;
 }
 
+.docs-table__col--key { width: 100px; }
+.docs-table__col--label { width: 140px; }
+
 .docs-table td code {
   font-family: var(--font-mono);
   font-size: 12px;
