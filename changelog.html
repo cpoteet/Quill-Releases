@@ -35,6 +35,69 @@
     <article class="release">
       <div class="release__inner">
         <div class="release__header">
+          <span class="release__version">v1.9.0</span>
+          <span class="release__date">June 26, 2026</span>
+        </div>
+
+        <div class="release__section">
+          <h2 class="release__section-title">What's New</h2>
+
+          <div class="release__feature">
+            <h3 class="release__feature-title">Cmd+Click to Open Links</h3>
+            <p class="release__body">Hold Cmd and click any link in the editor to open it in your default browser. A visual indicator (pointer cursor + underline) appears while Cmd is held. Fragment-only links (footnote anchors) are correctly skipped.</p>
+          </div>
+
+          <div class="release__feature">
+            <h3 class="release__feature-title">Update Checker</h3>
+            <p class="release__body">Quill now checks for new versions on launch and shows a dismissable banner in the sidebar when an update is available.</p>
+          </div>
+
+          <div class="release__feature">
+            <h3 class="release__feature-title">Editor Overscroll &amp; Block Editing</h3>
+            <p class="release__body">The editor now has bottom overscroll so you can keep writing without the cursor pinned to the bottom of the window. Enter in image captions exits to a new paragraph. Blockquotes have a new Enter behavior (split or exit) and a cite toggle button in the toolbar.</p>
+          </div>
+
+          <div class="release__feature">
+            <h3 class="release__feature-title">AI List &amp; Table Context</h3>
+            <p class="release__body">AI writing operations (Make Longer, Make Shorter, To Table, To List) now detect when your selection is inside a list or table and replace the whole container intelligently, instead of inserting fragments mid-structure.</p>
+          </div>
+        </div>
+
+        <div class="release__section">
+          <h2 class="release__section-title">Improvements</h2>
+          <ul class="release__list">
+            <li><strong>Footnote content restrictions</strong> — Footnotes are now limited to inline-only elements; images, tables, and other block content are blocked on drop and paste. Keyboard shortcuts for block-level operations are disabled inside footnotes.</li>
+            <li><strong>Classic content support</strong> — Pre-Gutenberg posts (no <code>&lt;!-- wp: --&gt;</code> block comments) are now run through <code>wpautop()</code> on load for proper paragraph and line-break rendering.</li>
+            <li><strong>Empty states</strong> — Sidebar sections and the editor now show placeholder messaging when empty instead of blank space.</li>
+            <li><strong>HTML entity decoding</strong> — Post and media titles with HTML entities (smart quotes, ampersands, etc.) now display correctly throughout the UI.</li>
+            <li><strong>HTTP image loading</strong> — Old posts with <code>http://</code> image URLs now load correctly in the editor.</li>
+            <li><strong>Media picker pagination</strong> — The media picker sheet now paginates and has a cancel button.</li>
+            <li><strong>Dark mode links</strong> — Links in the editor are now readable in dark mode.</li>
+            <li><strong>Credential validation</strong> — The settings dialog now validates credentials before saving.</li>
+          </ul>
+        </div>
+
+        <div class="release__section">
+          <h2 class="release__section-title">Fixes</h2>
+          <ul class="release__list">
+            <li>Excerpt field no longer adopts WordPress's auto-generated excerpt on load.</li>
+            <li>Footnote back-arrow positioned outside text flow (no longer shifts footnote text).</li>
+            <li>Backspace and Delete now work correctly inside footnotes.</li>
+            <li>Blockquote Enter respects depth guard for nested structures (tables, lists inside blockquotes).</li>
+            <li>Image toolbar scroll handler leak and position clamping fixed.</li>
+            <li>Anthropic web search citation tags stripped from AI-generated posts.</li>
+            <li>Loading spinners no longer get stuck when credentials are nil.</li>
+            <li>No more light-mode flash when loading the editor in dark mode.</li>
+            <li>Error toast shown when local draft save fails.</li>
+            <li>AI prompt uses correct <code>&lt;ol&gt;</code> tag for ordered lists.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="release__inner">
+        <div class="release__header">
           <span class="release__version">v1.8.0</span>
           <span class="release__date">June 18, 2026</span>
         </div>

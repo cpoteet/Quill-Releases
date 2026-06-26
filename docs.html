@@ -92,6 +92,9 @@
           <li>A confirmation dialog will appear. Click <strong>Open</strong>.</li>
         </ol>
         <p class="docs-body">Quill will open normally from this point forward. This prompt only appears once per installation.</p>
+        <h3 class="docs-h3">Updates</h3>
+        <p class="docs-body">Quill checks for new versions automatically on launch. When an update is available, a banner appears at the bottom of the sidebar with the new version number. Click <strong>View Release</strong> to open the release page in your browser. Click the <strong>×</strong> button to dismiss the banner — it will not reappear for the same version.</p>
+        <p class="docs-body">To update, download the new version from the release page, unzip it, and replace the existing <strong>Quill.app</strong> in your <code>/Applications</code> folder. Your credentials, drafts, and settings are stored separately and will carry over automatically.</p>
       </section>
 
       <section class="docs-section" id="connecting-to-wordpress">
@@ -196,7 +199,7 @@
               <tr><td>Paragraph / Heading</td><td></td><td>Dropdown menu to set the current block as Paragraph or Heading 1 through 6</td></tr>
               <tr><td>Bullet list</td><td>⌘⇧8</td><td>Converts the current block to an unordered list</td></tr>
               <tr><td>Number list</td><td>⌘⇧7</td><td>Converts the current block to an ordered list</td></tr>
-              <tr><td>Blockquote</td><td>⌘⇧B</td><td>Wraps the current block in a blockquote</td></tr>
+              <tr><td>Blockquote</td><td>⌘⇧B</td><td>Wraps the current block in a blockquote. When inside a blockquote, a citation toggle button appears. See <a href="#blockquotes" class="content-link">Blockquotes</a> in Content Elements.</td></tr>
               <tr><td>Code block</td><td>⌘⌥C</td><td>Converts the current block to a preformatted code block</td></tr>
             </tbody>
           </table>
@@ -224,7 +227,7 @@
             </thead>
             <tbody>
               <tr><td>Table</td><td>Inserts a table. When the cursor is inside a table, additional buttons appear to add/remove rows and columns or delete the table. See <a href="#tables" class="content-link">Tables</a> in Content Elements.</td></tr>
-              <tr><td>Link</td><td>Inserts or removes a hyperlink on the selected text. Opens the link picker, where you can type to search your WordPress posts, pages, and media by title, or paste any URL directly. Selecting a search result or pressing Enter applies the link. When editing an existing link, a Remove option is also available.</td></tr>
+              <tr><td>Link</td><td>Inserts or removes a hyperlink on the selected text. Opens the link picker, where you can type to search your WordPress posts, pages, and media by title, or paste any URL directly. Selecting a search result or pressing Enter applies the link. When editing an existing link, a Remove option is also available. To open a link in your default browser, hold ⌘ and click it. Links show a pointer cursor and underline while ⌘ is held.</td></tr>
               <tr><td>* (Footnote)</td><td>Inserts a footnote marker at the cursor position. See <a href="#footnotes" class="content-link">Footnotes</a> in Content Elements.</td></tr>
               <tr><td>Embed</td><td>Inserts an embed (video, social post, etc.) by URL. See <a href="#embeds" class="content-link">Embeds</a> in Content Elements.</td></tr>
               <tr><td>ABC (Spell check)</td><td>Runs a spell check on the document</td></tr>
@@ -249,6 +252,10 @@
           <li>Click <strong>Revert</strong> to discard unsaved changes and restore the last saved version. A confirmation sheet appears; press <strong>⌘↩︎</strong> to confirm or <strong>Escape</strong> to cancel.</li>
         </ul>
         <p class="docs-body"><strong>Autosave:</strong> Quill automatically saves your work every 30 seconds after a change. For remote posts, autosaves are stored locally and applied if you reopen a post before manually saving.</p>
+        <h3 class="docs-h3">Preview</h3>
+        <p class="docs-body">Click <strong>Preview</strong> in the toolbar to open the current post in your browser as it will appear on your site. Preview is only available for posts and pages already on WordPress, not for local drafts.</p>
+        <p class="docs-body">When you preview a <strong>published</strong> post, Quill sends your unsaved changes to WordPress as a temporary revision. The live post is not affected; only the preview shows the changes.</p>
+        <p class="docs-body">When you preview a <strong>draft</strong> post, WordPress updates the draft itself with your current editor content. This is standard WordPress behavior — drafts do not have separate revision state, so previewing a draft is equivalent to saving it on WordPress.</p>
         <h3 class="docs-h3">Find and Replace</h3>
         <p class="docs-body">Press <strong>⌘F</strong> to open the find and replace bar. Type in the <strong>Find</strong> field to highlight matches in the document. Use the arrow buttons or press <strong>↩︎</strong> (next) and <strong>⇧↩︎</strong> (previous) to navigate between matches. Toggle <strong>Aa</strong> to enable case-sensitive search.</p>
         <p class="docs-body">To replace matches, type in the <strong>Replace</strong> field and click <strong>Replace</strong> to replace the current match or <strong>All</strong> to replace every match in the document. Press <strong>Esc</strong> to close the find bar.</p>
@@ -281,7 +288,13 @@
         <h4 class="docs-h4">Alignment</h4>
         <p class="docs-body">Use the alignment buttons in the main toolbar (left, center, right) to float or center the image. These buttons are only visible when an image is selected.</p>
         <h4 class="docs-h4">Captions</h4>
-        <p class="docs-body">Click below an image to place the cursor in the caption field and type a caption. Captions are saved as part of the Gutenberg image block.</p>
+        <p class="docs-body">Click below an image to place the cursor in the caption field and type a caption. Captions are saved as part of the Gutenberg image block. Pressing <strong>Enter</strong> inside a caption exits the image and creates a new paragraph below it.</p>
+
+        <h3 class="docs-h3" id="blockquotes">Blockquotes</h3>
+        <p class="docs-body">Press <strong>⌘⇧B</strong> or click the <strong>Blockquote</strong> button in the toolbar to wrap the current block in a blockquote.</p>
+        <p class="docs-body"><strong>Adding a citation:</strong> When the cursor is inside a blockquote, a citation toggle button (bookmark icon) appears in the toolbar. Click it to add a citation line at the bottom of the blockquote, where you can type an author name or source. Click it again to remove the citation. Empty citations are automatically stripped when the post is saved.</p>
+        <p class="docs-body"><strong>Enter key behavior:</strong> Pressing <strong>Enter</strong> inside a blockquote creates a new paragraph within the blockquote. Pressing <strong>Enter</strong> on an empty line exits the blockquote and creates a new paragraph below it.</p>
+        <p class="docs-body"><strong>Removing a blockquote:</strong> Press <strong>⌘⇧B</strong> again or click the Blockquote button to unwrap the blockquote, returning its contents to normal paragraphs.</p>
 
         <h3 class="docs-h3" id="footnotes">Footnotes</h3>
         <p class="docs-body">Quill has full support for WordPress-style footnotes. To insert a footnote, place the cursor where you want the marker to appear and click the <strong>*</strong> button in the toolbar.</p>
@@ -294,6 +307,7 @@
           <li><strong>Automatic numbering:</strong> Footnote markers are always numbered sequentially from 1 based on their position in the document. If you insert a footnote between two existing ones, or delete one, all numbers update automatically.</li>
           <li><strong>Navigating between markers and entries:</strong> Each footnote entry at the bottom of the document has a <strong>↩︎</strong> button. Clicking it jumps your cursor back to the corresponding marker in the body text.</li>
           <li><strong>Deleting footnotes:</strong> Delete the inline marker in the body text and the corresponding footnote entry is removed automatically. You cannot delete entries from the list directly; they are always kept in sync with the markers.</li>
+          <li><strong>Line breaks:</strong> Press <strong>Enter</strong> inside a footnote entry to insert a line break within the entry. Unlike the main editor, Enter does not create a new block — it creates a soft break so you can write multi-line footnotes.</li>
         </ul>
         <p class="docs-body"><strong>Content restrictions:</strong> Footnotes support only inline content — bold, italic, strikethrough, inline code, and links. Block elements such as images, headings, lists, tables, and blockquotes cannot be inserted inside footnotes. The toolbar buttons for these elements are disabled when the cursor is inside a footnote entry. If you paste content containing block elements into a footnote, the block structure is stripped and only the text and inline formatting are kept.</p>
         <p class="docs-body"><strong>On publish:</strong> Quill saves footnotes as standard WordPress block footnotes (<code>wp-block-footnotes</code>), fully compatible with the Gutenberg editor.</p>
@@ -351,7 +365,7 @@
         <h2 class="docs-h2">Post &amp; Page Settings</h2>
         <p class="docs-body">The settings panel is accessed by clicking the settings toggle button at the right end of the editor toolbar. It slides in from the right and contains all publishing options for the current post or page.</p>
         <p class="docs-body">Changes made in the settings panel take effect when you next save or publish the post. They are not sent to WordPress automatically as you adjust them.</p>
-        <div class="docs-note">Settings are not saved for local drafts. The panel is visible but values will not be applied until you publish the post or page to WordPress.</div>
+        <div class="docs-note">Settings you configure for a local draft (categories, tags, slug, etc.) are sent to WordPress when you publish. However, they are not saved locally with the draft. If you close the app before publishing, those settings will need to be set again.</div>
         <h3 class="docs-h3">Status</h3>
         <p class="docs-body">The Status picker controls the publish state of the post or page:</p>
         <div class="docs-table-wrap">
