@@ -76,7 +76,7 @@
         <h2 class="docs-h2">Requirements &amp; Installation</h2>
         <h3 class="docs-h3">Requirements</h3>
         <ul class="docs-list">
-          <li><strong>macOS:</strong> macOS 26 (Tahoe) or later. Earlier versions may work but are not officially supported.</li>
+          <li><strong>macOS:</strong> macOS 26 (Tahoe) or later. Earlier versions of macOS may work but are not officially supported.</li>
           <li><strong>WordPress:</strong> A self-hosted WordPress site running WordPress 7.0 or later. Earlier versions may work but are not officially supported. Your site must be accessible over HTTPS.</li>
           <li><strong>WordPress.com:</strong> Not supported. Quill connects only to self-hosted WordPress installations.</li>
         </ul>
@@ -105,14 +105,14 @@
           <li>Log into your WordPress admin dashboard.</li>
           <li>In the left sidebar, navigate to <strong>Users → Profile</strong>.</li>
           <li>Scroll down to the <strong>Application Passwords</strong> section.</li>
-          <li>In the <strong>New Application Password Name</strong> field, enter a name such as "Quill".</li>
+          <li>In the <strong>New Application Password Name</strong> field, enter a name to identify this connection, such as "Quill".</li>
           <li>Click <strong>Add New Application Password</strong>.</li>
           <li>WordPress will display the generated password. <strong>Copy it now.</strong> It will not be shown again.</li>
         </ol>
         <h3 class="docs-h3">Step 2: Enter Your Credentials in Quill</h3>
         <ol class="docs-ol">
           <li>Open Quill's settings via the <strong>Quill</strong> menu → <strong>Settings</strong>, or press <strong>⌘,</strong>.</li>
-          <li>In the <strong>WordPress Credentials</strong> section, fill in:
+          <li>In the <strong>WordPress Credentials</strong> section, fill in the following fields:
             <ul class="docs-list docs-list--nested">
               <li><strong>Site URL:</strong> Your site's full URL, including <code>https://</code> (for example, <code>https://yoursite.com</code>). Trailing slashes are handled automatically.</li>
               <li><strong>Username:</strong> Your WordPress username.</li>
@@ -126,7 +126,7 @@
 
       <section class="docs-section" id="the-interface">
         <h2 class="docs-h2">The Interface</h2>
-        <p class="docs-body">Quill's window is divided into three panels: the <strong>Sidebar</strong> on the left, the <strong>Editor</strong> in the center, and the <strong>Settings Panel</strong> on the right. The sidebar and settings panel can each be shown or hidden independently.</p>
+        <p class="docs-body">Quill's window is divided into three panels: the <strong>Sidebar</strong> on the left, the <strong>Editor</strong> in the center, and the <strong>Settings Panel</strong> on the right. The sidebar and settings panel can each be shown or hidden independently, giving you full control over how much screen space is dedicated to writing.</p>
         <h3 class="docs-h3">The Sidebar</h3>
         <p class="docs-body">The sidebar organizes your content into four sections, selectable via tabs at the top:</p>
         <ul class="docs-list">
@@ -143,7 +143,7 @@
           <li><strong>Title field</strong> — A large text field at the top for the post or page title.</li>
           <li><strong>Editor canvas</strong> — The main writing area below, powered by a rich text editor that produces clean WordPress-compatible HTML.</li>
         </ul>
-        <p class="docs-body">Above the title field is the <strong>toolbar</strong>:</p>
+        <p class="docs-body">Above the title field is the <strong>toolbar</strong>, which contains:</p>
         <div class="docs-table-wrap">
           <table class="docs-table">
             <thead>
@@ -171,18 +171,11 @@
         <h2 class="docs-h2">Writing &amp; Editing</h2>
         <h3 class="docs-h3">Creating Posts and Pages</h3>
         <p class="docs-body">Use the <strong>File</strong> menu to create new content:</p>
-        <div class="docs-table-wrap">
-          <table class="docs-table">
-            <thead>
-              <tr><th>Action</th><th class="docs-table__col--key">Shortcut</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>New Post</td><td>⌘N</td></tr>
-              <tr><td>New Page</td><td>⌘⇧N</td></tr>
-              <tr><td>New Media upload</td><td>⌘⌥N</td></tr>
-            </tbody>
-          </table>
-        </div>
+        <ul class="docs-list">
+          <li><strong>New Post</strong> (⌘N)</li>
+          <li><strong>New Page</strong> (⌘⇧N)</li>
+          <li><strong>New Media upload</strong> (⌘⌥N)</li>
+        </ul>
         <p class="docs-body">New posts and pages are created as <strong>local drafts</strong> and appear in the Drafts section of the sidebar immediately. They are saved only on your Mac until you publish them to WordPress.</p>
         <h3 class="docs-h3">The Editor</h3>
         <p class="docs-body">The editor is a rich text environment that produces clean, Gutenberg-compatible HTML. What you see is what gets published: headings, lists, blockquotes, and all formatting render as they will appear on your site.</p>
@@ -251,7 +244,7 @@
           <li>An amber dot in the toolbar indicates you have unsaved changes.</li>
           <li>Click <strong>Revert</strong> to discard unsaved changes and restore the last saved version. A confirmation sheet appears; press <strong>⌘↩︎</strong> to confirm or <strong>Escape</strong> to cancel.</li>
         </ul>
-        <p class="docs-body"><strong>Autosave:</strong> Quill automatically saves your work every 30 seconds after a change. For remote posts, autosaves are stored locally and applied if you reopen a post before manually saving.</p>
+        <p class="docs-body"><strong>Autosave:</strong> Quill automatically saves your work every 30 seconds after a change, so you don't lose progress if you close the app unexpectedly. For remote posts, autosaves are stored locally and applied if you reopen a post before manually saving.</p>
         <h3 class="docs-h3">Preview</h3>
         <p class="docs-body">Click <strong>Preview</strong> in the toolbar to open the current post in your browser as it will appear on your site. Preview is only available for posts and pages already on WordPress, not for local drafts.</p>
         <p class="docs-body">When you preview a <strong>published</strong> post, Quill sends your unsaved changes to WordPress as a temporary revision. The live post is not affected; only the preview shows the changes.</p>
@@ -304,9 +297,9 @@
           <li>A footnote entry is added to a numbered list at the bottom of the document, where you can type the footnote text.</li>
         </ol>
         <ul class="docs-list">
-          <li><strong>Automatic numbering:</strong> Footnote markers are always numbered sequentially from 1 based on their position in the document. If you insert a footnote between two existing ones, or delete one, all numbers update automatically.</li>
+          <li><strong>Automatic numbering:</strong> Footnote markers are always numbered sequentially from 1 based on their position in the document. If you insert a footnote between two existing ones, or delete one, all numbers update automatically; you never need to renumber manually.</li>
           <li><strong>Navigating between markers and entries:</strong> Each footnote entry at the bottom of the document has a <strong>↩︎</strong> button. Clicking it jumps your cursor back to the corresponding marker in the body text.</li>
-          <li><strong>Deleting footnotes:</strong> Delete the inline marker in the body text and the corresponding footnote entry is removed automatically. You cannot delete entries from the list directly; they are always kept in sync with the markers.</li>
+          <li><strong>Deleting footnotes:</strong> Delete the inline marker in the body text and the corresponding footnote entry at the bottom of the document is removed automatically. You cannot delete entries from the list directly; they are always kept in sync with the markers.</li>
           <li><strong>Line breaks:</strong> Press <strong>Enter</strong> inside a footnote entry to insert a line break within the entry. Unlike the main editor, Enter does not create a new block — it creates a soft break so you can write multi-line footnotes.</li>
         </ul>
         <p class="docs-body"><strong>Content restrictions:</strong> Footnotes support only inline content — bold, italic, strikethrough, inline code, and links. Block elements such as images, headings, lists, tables, and blockquotes cannot be inserted inside footnotes. The toolbar buttons for these elements are disabled when the cursor is inside a footnote entry. If you paste content containing block elements into a footnote, the block structure is stripped and only the text and inline formatting are kept.</p>
@@ -341,6 +334,7 @@
           <li>Press <strong>Enter</strong> or click <strong>Insert</strong>.</li>
         </ol>
         <p class="docs-body">The embed appears in the editor as a card showing the URL. It will render as a live embed on your published site; Quill does not preview the embedded content.</p>
+        <p class="docs-body"><strong>Supported providers:</strong></p>
         <div class="docs-table-wrap">
           <table class="docs-table">
             <thead>
@@ -395,7 +389,7 @@
         <h3 class="docs-h3">Slug</h3>
         <p class="docs-body">The slug is the URL-friendly identifier for the post or page, used in the permalink. Edit this field to customize the URL. Leave it blank to let WordPress generate one automatically from the title.</p>
         <h3 class="docs-h3">Excerpt <span class="docs-meta">(Posts only)</span></h3>
-        <p class="docs-body">The excerpt is a short summary of the post, used by themes in archive and search result views. Type directly in the excerpt field. If left blank, WordPress will generate an automatic excerpt from the post body.</p>
+        <p class="docs-body">The excerpt is a short summary of the post, shown by some themes on archive and search result pages. Type directly in the excerpt field. If you leave it blank, your theme may show the first few words of the post body instead. This happens on your site, not inside Quill.</p>
         <h3 class="docs-h3">Parent Page <span class="docs-meta">(Pages only)</span></h3>
         <p class="docs-body">The Parent Page picker sets the hierarchy of the page. Select a parent page to nest this page beneath it in the URL structure, or leave it set to <strong>None (top-level)</strong> for a root-level page.</p>
         <h3 class="docs-h3">Discussion</h3>
@@ -412,6 +406,7 @@
         <p class="docs-body">If your library has more items than the current view, a <strong>Load More</strong> button appears at the bottom of the grid. Click it to fetch the next page of results.</p>
         <h3 class="docs-h3">Detail View</h3>
         <p class="docs-body">Clicking a media item opens a two-panel detail view: a large preview on the left and a metadata panel on the right.</p>
+        <p class="docs-body">The metadata panel shows:</p>
         <div class="docs-table-wrap">
           <table class="docs-table">
             <thead>
@@ -440,7 +435,7 @@
         <p class="docs-body">You can also drag an image file directly from Finder onto the editor canvas to upload and insert it in one step.</p>
         <h3 class="docs-h3">Deleting Media</h3>
         <p class="docs-body">Right-click any item in the media grid and select <strong>Delete</strong> to remove it. A confirmation prompt will appear before the deletion proceeds.</p>
-        <div class="docs-note"><strong>Warning:</strong> Deleting media is permanent. WordPress does not have a trash for media items; deletion cannot be undone.</div>
+        <div class="docs-note">Deleting media is permanent. WordPress does not have a trash for media items; deletion cannot be undone.</div>
       </section>
 
       <section class="docs-section" id="ai-writing-features">
