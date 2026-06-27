@@ -219,19 +219,19 @@
               <tr><th class="docs-table__col--label">Button</th><th>Function</th></tr>
             </thead>
             <tbody>
-              <tr><td>Table</td><td>Inserts a table. When the cursor is inside a table, additional buttons appear to add/remove rows and columns or delete the table. See <a href="#tables" class="content-link">Tables</a> in Content Elements.</td></tr>
+              <tr><td>Table</td><td>Inserts a table. When the cursor is inside a table, additional buttons appear to add/remove rows and columns or delete the table. Reference <a href="#tables" class="content-link">Tables</a> for more details.</td></tr>
               <tr><td>Link</td><td>Inserts or removes a hyperlink on the selected text. Opens the link picker, where you can type to search your WordPress posts, pages, and media by title, or paste any URL directly. Selecting a search result or pressing Enter applies the link. When editing an existing link, a Remove option is also available. To open a link in your default browser, hold ⌘ and click it. Links show a pointer cursor and underline while ⌘ is held.</td></tr>
-              <tr><td>* (Footnote)</td><td>Inserts a footnote marker at the cursor position. See <a href="#footnotes" class="content-link">Footnotes</a> in Content Elements.</td></tr>
-              <tr><td>Embed</td><td>Inserts an embed (video, social post, etc.) by URL. See <a href="#embeds" class="content-link">Embeds</a> in Content Elements.</td></tr>
-              <tr><td>ABC (Spell check)</td><td>Runs a spell check on the document</td></tr>
-              <tr><td>&lt;/&gt; (Code view)</td><td>Toggles between the rich text editor and a raw HTML view</td></tr>
-              <tr><td>Image</td><td>Opens the media library picker to insert an image. See <a href="#images" class="content-link">Images</a> in Content Elements.</td></tr>
-              <tr><td>Pencil (Generate)</td><td>Opens the AI content generator. Visible only when an Anthropic API key is configured. See <a href="#ai-writing-features" class="content-link">AI Writing Features</a>.</td></tr>
-              <tr><td>Checkmark-circle (Evaluate)</td><td>Opens the AI writing evaluator. Visible only when an Anthropic API key is configured. See <a href="#ai-writing-features" class="content-link">AI Writing Features</a>.</td></tr>
+              <tr><td>* (Footnote)</td><td>Inserts a footnote marker at the cursor position. Reference <a href="#footnotes" class="content-link">Footnotes</a> for more details.</td></tr>
+              <tr><td>Embed</td><td>Inserts an embed (video, social post, etc.) by URL. Reference <a href="#embeds" class="content-link">Embeds</a> for more details.</td></tr>
+              <tr><td>ABC (Spell check)</td><td>Runs a spell check on the document. Reference <a href="#spell-check" class="content-link">Spell Check</a> for more details.</td></tr>
+              <tr><td>&lt;/&gt; (Code view)</td><td>Toggles between the rich text editor and a raw HTML view. Reference <a href="#code-view" class="content-link">Code View</a> for more details.</td></tr>
+              <tr><td>Image</td><td>Opens the media library picker to insert an image. Reference <a href="#images" class="content-link">Images</a> for more details.</td></tr>
+              <tr><td>Pencil (Generate)</td><td>Opens the AI content generator. Visible only when an Anthropic API key is configured. Reference <a href="#ai-writing-features" class="content-link">AI Writing Features</a> for more details.</td></tr>
+              <tr><td>Checkmark-circle (Evaluate)</td><td>Opens the AI writing evaluator. Visible only when an Anthropic API key is configured. Reference <a href="#ai-writing-features" class="content-link">AI Writing Features</a> for more details.</td></tr>
             </tbody>
           </table>
         </div>
-        <p class="docs-body">The image alignment buttons (left, center, right) appear in the toolbar only when an image is selected. See <a href="#images" class="content-link">Images</a> in Content Elements for full detail on resizing, captions, and alt text.</p>
+        <p class="docs-body">The image alignment buttons (left, center, right) appear in the toolbar only when an image is selected. Reference <a href="#images" class="content-link">Images</a> for more details on resizing, captions, and alt text.</p>
         <h3 class="docs-h3">Saving and Publishing</h3>
         <p class="docs-body"><strong>For local drafts:</strong></p>
         <ul class="docs-list">
@@ -248,18 +248,28 @@
         <h3 class="docs-h3">Preview</h3>
         <p class="docs-body">Click <strong>Preview</strong> in the toolbar to open the current post in your browser as it will appear on your site. Preview is only available for posts and pages already on WordPress, not for local drafts.</p>
         <p class="docs-body">When you preview a <strong>published</strong> post, Quill sends your unsaved changes to WordPress as a temporary revision. The live post is not affected; only the preview shows the changes.</p>
-        <p class="docs-body">When you preview a <strong>draft</strong> post, WordPress updates the draft itself with your current editor content. This is standard WordPress behavior — drafts do not have separate revision state, so previewing a draft is equivalent to saving it on WordPress.</p>
+        <p class="docs-body">When you preview a <strong>draft</strong> post, WordPress updates the draft itself with your current editor content. This is standard WordPress behavior: drafts do not have separate revision state, so previewing a draft is equivalent to saving it on WordPress.</p>
         <h3 class="docs-h3">Find and Replace</h3>
         <p class="docs-body">Press <strong>⌘F</strong> to open the find and replace bar. Type in the <strong>Find</strong> field to highlight matches in the document. Use the arrow buttons or press <strong>↩︎</strong> (next) and <strong>⇧↩︎</strong> (previous) to navigate between matches. Toggle <strong>Aa</strong> to enable case-sensitive search.</p>
         <p class="docs-body">To replace matches, type in the <strong>Replace</strong> field and click <strong>Replace</strong> to replace the current match or <strong>All</strong> to replace every match in the document. Press <strong>Esc</strong> to close the find bar.</p>
-        <h3 class="docs-h3">Spell Check</h3>
+        <h3 class="docs-h3" id="spell-check">Spell Check</h3>
         <p class="docs-body">Click the <strong>ABC</strong> button in the toolbar to check spelling. Right-clicking on any word in the editor while editing shows a context menu with spelling suggestions when a spelling error is detected under the cursor.</p>
-        <h3 class="docs-h3">Code View</h3>
-        <p class="docs-body">Click the <strong>&lt;/&gt;</strong> button in the toolbar to toggle between the visual editor and a raw HTML view of your post. Code view shows the exact WordPress block HTML that will be saved — including Gutenberg block comments such as <code>&lt;!-- wp:paragraph --&gt;</code> — formatted and indented for readability.</p>
-        <p class="docs-body"><strong>Block comments are preserved.</strong> When you open a post created in the WordPress block editor, Quill keeps the original block comment markup intact. Switching to code view shows those comments in place, and switching back to the visual editor does not discard them.</p>
-        <p class="docs-body"><strong>Editing in code view.</strong> You can type directly in the code view textarea. Changes are synced to Quill automatically as you type — you do not need to exit code view before saving. Pressing <strong>⌘S</strong> saves whatever is in the textarea. When you exit code view, the visual editor reloads from your edited HTML. If you enter and exit code view without making any changes, the visual editor is left exactly as it was — Quill detects the no-op and skips the reload entirely.</p>
-
-        <div class="docs-note">If your post or page has block comments and you make visual edits, the block comments will be erased. Only edit those posts or pages in code view to retain the comments.</div>
+        <h3 class="docs-h3" id="code-view">Code View</h3>
+        <p class="docs-body">Click the <strong>&lt;/&gt;</strong> button in the toolbar to toggle between the visual editor and a raw HTML view of your post. Code view shows the exact WordPress block HTML that will be saved, including Gutenberg block comments such as <code>&lt;!-- wp:paragraph --&gt;</code>, formatted and indented for readability.</p>
+        <p class="docs-body"><strong>Editing in code view.</strong> You can type directly in the code view textarea. Changes are synced to Quill automatically as you type, so you do not need to exit code view before saving. Pressing <strong>⌘S</strong> saves whatever is in the textarea. When you exit code view, your changes appear in the visual editor.</p>
+        <p class="docs-body"><strong>What survives visual edits.</strong> CSS classes and IDs added to the following elements in code view will persist even after you return to the visual editor and continue editing:</p>
+        <ul class="docs-list">
+          <li>Paragraphs, headings, blockquotes, citations</li>
+          <li>Lists (<code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, <code>&lt;li&gt;</code>)</li>
+          <li>Code blocks, horizontal rules</li>
+          <li>Tables (<code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code>, <code>&lt;th&gt;</code>, <code>&lt;td&gt;</code>)</li>
+          <li>Image figures (<code>&lt;figure&gt;</code>) and image elements (<code>&lt;img&gt;</code>)</li>
+          <li>Links (<code>&lt;a&gt;</code>)</li>
+        </ul>
+        <p class="docs-body">For example, adding <code>class="intro"</code> to a <code>&lt;p&gt;</code> tag in code view, switching back to the visual editor, and typing more text will not remove your class. Editing a link's URL through the link picker will also preserve any classes you added to the <code>&lt;a&gt;</code> tag. Classes are never copied to new elements when you press Enter to create a new block.</p>
+        <p class="docs-body"><strong>What survives saving but not visual edits.</strong> Any HTML change you make in code view (including inline styles, data attributes, custom elements, or Gutenberg block comments) is preserved when you save directly from code view or without making visual edits first. The raw HTML you wrote is sent to WordPress exactly as-is. However, if you return to the visual editor and make changes, the editor reconstructs the HTML from its internal model, and anything outside the supported schema (see the list above) will be lost.</p>
+        <p class="docs-body">The practical rule: if you need to make changes that go beyond CSS classes on supported elements, do your visual editing first, then switch to code view for your final HTML pass before saving.</p>
+        <div class="docs-note"><strong>Block comments and visual editing.</strong> When you open a post created in the WordPress block editor, Quill keeps the original block comment markup intact. Switching to code view shows those comments in place, and switching back to the visual editor does not discard them. However, if you make visual edits and save, the block comments will be erased. To retain block comments, edit those posts only in code view.</div>
       </section>
 
       <section class="docs-section" id="content-elements">
@@ -269,6 +279,7 @@
         <p class="docs-body">Click the <strong>Image</strong> button in the toolbar to open the media library picker and insert an image at the cursor position. See <a href="#media-library" class="content-link">Media Library</a> for details on uploading and browsing media. You can also drag an image file directly from Finder onto the editor canvas; Quill will upload it to your WordPress media library and insert it in one step.</p>
         <p class="docs-body">Once an image is inserted, click it to select it. A floating image toolbar appears above the image, and alignment controls become available in the main toolbar.</p>
         <h4 class="docs-h4">Resizing</h4>
+        <p class="docs-body">Images can be resized in two ways:</p>
         <ul class="docs-list">
           <li><strong>Drag handles</strong> — Eight handles appear around the selected image (corners and edges). Drag any handle to resize freely.</li>
           <li><strong>W and H fields</strong> — Enter exact pixel dimensions in the width and height fields in the image toolbar.</li>
@@ -296,11 +307,12 @@
           <li>A numbered superscript marker appears inline at the cursor position.</li>
           <li>A footnote entry is added to a numbered list at the bottom of the document, where you can type the footnote text.</li>
         </ol>
+        <p class="docs-body">Here are a few things to keep in mind as you work with footnotes.</p>
         <ul class="docs-list">
           <li><strong>Automatic numbering:</strong> Footnote markers are always numbered sequentially from 1 based on their position in the document. If you insert a footnote between two existing ones, or delete one, all numbers update automatically; you never need to renumber manually.</li>
           <li><strong>Navigating between markers and entries:</strong> Each footnote entry at the bottom of the document has a <strong>↩︎</strong> button. Clicking it jumps your cursor back to the corresponding marker in the body text.</li>
           <li><strong>Deleting footnotes:</strong> Delete the inline marker in the body text and the corresponding footnote entry at the bottom of the document is removed automatically. You cannot delete entries from the list directly; they are always kept in sync with the markers.</li>
-          <li><strong>Line breaks:</strong> Press <strong>Enter</strong> inside a footnote entry to insert a line break within the entry. Unlike the main editor, Enter does not create a new block — it creates a soft break so you can write multi-line footnotes.</li>
+          <li><strong>Line breaks:</strong> Press <strong>Enter</strong> inside a footnote entry to insert a line break within the entry. Unlike the main editor, Enter does not create a new block; it creates a soft break so you can write multi-line footnotes.</li>
         </ul>
         <p class="docs-body"><strong>Content restrictions:</strong> Footnotes support only inline content — bold, italic, strikethrough, inline code, and links. Block elements such as images, headings, lists, tables, and blockquotes cannot be inserted inside footnotes. The toolbar buttons for these elements are disabled when the cursor is inside a footnote entry. If you paste content containing block elements into a footnote, the block structure is stripped and only the text and inline formatting are kept.</p>
         <p class="docs-body"><strong>On publish:</strong> Quill saves footnotes as standard WordPress block footnotes (<code>wp-block-footnotes</code>), fully compatible with the Gutenberg editor.</p>
