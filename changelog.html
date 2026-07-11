@@ -35,6 +35,49 @@
     <article class="release">
       <div class="release__inner">
         <div class="release__header">
+          <span class="release__version">v1.10.0</span>
+          <span class="release__date">July 11, 2026</span>
+        </div>
+
+        <div class="release__section">
+          <h2 class="release__section-title">What's New</h2>
+
+          <div class="release__feature">
+            <h3 class="release__feature-title">Image Galleries</h3>
+            <p class="release__body">Create native WordPress galleries without leaving Quill. The new gallery button opens a multi-select media picker with a reorderable selection pane and controls for columns, crop, link destination, and image size. Upload new images directly from the sheet, and they're added to the gallery you're building. Galleries save as proper Gutenberg <code>wp:gallery</code>/<code>wp:image</code> block-comment HTML, and existing galleries round-trip verbatim (preserving captions and other details the structured attributes don't model).</p>
+          </div>
+
+          <div class="release__feature">
+            <h3 class="release__feature-title">Link to Full Image</h3>
+            <p class="release__body">Images now have a "Link to Full Image" toggle in the image toolbar, wrapping the image in a link to its full-resolution original. Works for images sourced from your media library as well as dragged-in or pasted images without a media ID.</p>
+          </div>
+        </div>
+
+        <div class="release__section">
+          <h2 class="release__section-title">Improvements</h2>
+          <ul class="release__list">
+            <li><strong>Code view preserves classes</strong> — Editing raw HTML in code view and switching back to the visual editor no longer strips CSS classes from any element.</li>
+            <li><strong>Taxonomy cache auto-refresh</strong> — Opening a post that references a tag or category created after the last cache refresh now re-fetches the taxonomy list automatically.</li>
+            <li><strong>Editor scroll reset</strong> — Switching between posts resets the editor scroll position instead of inheriting the previous post's scroll offset.</li>
+          </ul>
+        </div>
+
+        <div class="release__section">
+          <h2 class="release__section-title">Fixes</h2>
+          <ul class="release__list">
+            <li>Hardened network error handling, sidebar remount guards, and MIME-type lookups.</li>
+            <li>Fixed a post-switch state race, a toast auto-dismiss timer bug, a cite regex edge case, and update-check retry behavior.</li>
+            <li>Gallery block-comment wrapping no longer accumulates orphaned whitespace between images on repeated saves.</li>
+            <li>Gallery picker no longer shows a stuck spinner when no credentials are configured.</li>
+            <li>Gallery Size picker's "Link to Full Image" now links to the true full-resolution original, not the display-size URL.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="release__inner">
+        <div class="release__header">
           <span class="release__version">v1.9.0</span>
           <span class="release__date">June 26, 2026</span>
         </div>
