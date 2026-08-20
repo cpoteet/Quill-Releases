@@ -35,6 +35,68 @@
     <article class="release">
       <div class="release__inner">
         <div class="release__header">
+          <span class="release__version">v1.11.0</span>
+          <span class="release__date">August 20, 2026</span>
+        </div>
+
+        <div class="release__section">
+          <h2 class="release__section-title">What's New</h2>
+
+          <div class="release__feature">
+            <h3 class="release__feature-title">Unmodeled Gutenberg Blocks Are Safe</h3>
+            <p class="release__body">Quill no longer damages blocks it does not have an editor for. Columns, Group, Accordion, Audio, Video, Pullquote, Playlist and third-party blocks now load as a static "Not editable in the visual editor" card. Quill preserves their HTML byte-for-byte and regenerates their block comments on save. Before this release, these blocks lost their markup on the first save.</p>
+          </div>
+
+          <div class="release__feature">
+            <h3 class="release__feature-title">Paste as Markdown (⌘⇧V)</h3>
+            <p class="release__body">Edit ▸ Paste as Markdown converts Markdown on the clipboard into formatted content: headings, lists, quotes, fenced code, rules, tables and images. Normal ⌘V is unchanged.</p>
+          </div>
+
+          <div class="release__feature">
+            <h3 class="release__feature-title">Alt Text and Captions for Gallery Images</h3>
+            <p class="release__body">The gallery sheet now has an expandable row per image with alt text and caption fields. Both save into the image's own <code>wp:image</code> block and load back when you reopen the post.</p>
+          </div>
+
+          <div class="release__feature">
+            <h3 class="release__feature-title">HEIC Photos Upload Correctly</h3>
+            <p class="release__body">Quill converts HEIC and HEIF files to JPEG before upload. WordPress 7.1 accepts HEIC but cannot generate the smaller sizes for it, so those uploads produced an image with no thumbnails. Orientation and pixel dimensions survive the conversion. This applies to Finder drops, the media sidebar and the gallery sheet.</p>
+          </div>
+
+          <div class="release__feature">
+            <h3 class="release__feature-title">Upload Progress for Dropped Images</h3>
+            <p class="release__body">Dropping images into the editor now shows a progress pill with the file count and a result message. Drops that overlap are queued, so a second drop no longer clears the first one's status.</p>
+          </div>
+        </div>
+
+        <div class="release__section">
+          <h2 class="release__section-title">Improvements</h2>
+          <ul class="release__list">
+            <li><strong>Standalone images save as real image blocks</strong> — A dragged or pasted image is now wrapped in <code>&lt;!-- wp:image --&gt;</code> comments with its width, size and link attributes, so WordPress treats it as a block instead of loose HTML.</li>
+            <li><strong>Decorative images</strong> — WordPress 7.1's "mark as decorative" toggle sets <code>role</code> on the image. Quill reads that attribute on load and writes it back on save.</li>
+            <li><strong>Cursor placement after inserting an image</strong> — The cursor lands in a new empty paragraph below the image instead of inside its empty caption.</li>
+            <li><strong>Markdown typing shortcuts documented</strong> — The user guide now lists the shortcuts the editor accepts as you type.</li>
+          </ul>
+        </div>
+
+        <div class="release__section">
+          <h2 class="release__section-title">Fixes</h2>
+          <ul class="release__list">
+            <li>The title bar matches the app's warm panel color, no longer depends on the mode the app launched in, and no longer flashes on every state change.</li>
+            <li>Pickers and the heading selector pill keep the correct styling after a light/dark switch.</li>
+            <li>Nested lists no longer gain a stray <code>&lt;p&gt;</code> on every save.</li>
+            <li>Multi-line plain text pasted into a footnote stays inside the footnote.</li>
+            <li>The footnote back-arrow renders as text, not as an emoji.</li>
+            <li>The spell-check menu shows "No Suggestions" when there are no guesses.</li>
+            <li>The gallery sheet's alt/caption row responds to the pointer correctly, and a row's expanded state clears when you deselect the image.</li>
+            <li>HEIC conversion runs off the main thread, so the window no longer freezes while a large photo converts.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="release__inner">
+        <div class="release__header">
           <span class="release__version">v1.10.0</span>
           <span class="release__date">July 11, 2026</span>
         </div>
